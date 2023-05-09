@@ -1,8 +1,4 @@
-import type {
-  GetStaticPaths,
-  GetStaticProps,
-  InferGetStaticPropsType,
-} from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 
 import { Meta } from "@/layouts/Meta";
 import { Main } from "@/templates/Main";
@@ -30,10 +26,10 @@ export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   };
 };
 
-const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+export default function Blog({ slug }: IBlogUrl) {
   return (
-    <Main meta={<Meta title={props.slug} description="Lorem ipsum" />}>
-      <h1 className="capitalize">{props.slug}</h1>
+    <Main meta={<Meta title={slug} description="Lorem ipsum" />}>
+      <h1 className="capitalize">{slug}</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eos
         earum doloribus, quibusdam magni accusamus vitae! Nisi, sunt! Aliquam
@@ -42,6 +38,4 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       </p>
     </Main>
   );
-};
-
-export default Blog;
+}

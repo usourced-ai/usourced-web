@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Meta } from "@/layouts/Meta";
 import { Main } from "@/templates/Main";
 
-const Index = () => {
+export default function Index() {
   const router = useRouter();
 
   return (
@@ -181,6 +181,4 @@ const Index = () => {
       </p>
     </Main>
   );
-};
-
-export default Index;
+}
