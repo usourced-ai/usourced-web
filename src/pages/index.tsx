@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
+import { Main } from "@/layouts/Main";
 import { Meta } from "@/layouts/Meta";
-import { Main } from "@/templates/Main";
 
 export default function Index() {
   const router = useRouter();
