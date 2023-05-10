@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import React from "react";
 
-import { AppBar } from "./components/AppBar";
-import { DemoBanner } from "./components/DemoBanner";
+import { AppBar } from "@/components/layout/AppBar";
+import { AppFooter } from "@/components/layout/AppFooter";
+import { DemoBanner } from "@/components/layout/DemoBanner";
 
 export function AppLayout({
   meta,
@@ -17,6 +18,7 @@ export function AppLayout({
       <AppBar />
       <DemoBanner />
       <main className="min-h-full">{children}</main>
+      <AppFooter />
     </>
   );
 }

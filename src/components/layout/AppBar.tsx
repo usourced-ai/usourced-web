@@ -6,7 +6,9 @@ import { useRouter } from "next/router";
 import { useSnackbar } from "notistack";
 import React from "react";
 
-const navigationLinks = [
+import { Button } from "@/components/common/Button";
+
+const NAVIGATION_LINKS = [
   { name: "About", href: "/about" },
   { name: "Custom Request", href: "/custom-request" },
   { name: "Catalog Products", href: "/contact" },
@@ -35,13 +37,9 @@ function Masthead() {
 function SignInButton() {
   const { enqueueSnackbar } = useSnackbar();
   return (
-    <button
-      type="button"
-      className="rounded-full bg-brand px-4 py-2.5 text-base font-medium text-white shadow-sm hover:bg-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 active:bg-teal-700"
-      onClick={() => enqueueSnackbar("This is a demo.")}
-    >
+    <Button size="xl" onClick={() => enqueueSnackbar("This is a demo.")}>
       Sign In
-    </button>
+    </Button>
   );
 }
 
@@ -89,12 +87,12 @@ function MobileMenu({
 
 export function AppBar() {
   const router = useRouter();
-  const navigationItems = navigationLinks.map((link) => ({
+  const navigationItems = NAVIGATION_LINKS.map((link) => ({
     ...link,
     current: router.pathname === link.href,
   }));
   return (
-    <Disclosure as="nav" className="border-b border-gray-200 bg-white">
+    <Disclosure as="nav" className="border-b border-gray-200 bg-cream">
       {({ open }) => (
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-24 justify-between">
