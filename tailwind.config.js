@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        brand: "#183439",
         cream: "#F8F6F3",
         peachy: "#F5CCB6",
         sunshine: "#F7F7B6",
@@ -21,7 +22,6 @@ module.exports = {
           900: "#0F2124",
           950: "#081012",
         },
-        theme: "#183439",
         sky: "#CBECF7",
         grass: "#C4EA98",
       },

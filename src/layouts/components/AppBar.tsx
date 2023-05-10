@@ -22,7 +22,7 @@ type NavigationItem = {
 
 function Masthead() {
   return (
-    <Link href="/" className="hover:border-none">
+    <Link href="/">
       <img
         className="block h-14 w-auto"
         src="/assets/nav/usourced-masthead.png"
@@ -37,7 +37,7 @@ function SignInButton() {
   return (
     <button
       type="button"
-      className="rounded-full bg-theme px-4 py-2.5 text-base font-medium text-white shadow-sm hover:bg-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 active:bg-teal-700"
+      className="rounded-full bg-brand px-4 py-2.5 text-base font-medium text-white shadow-sm hover:bg-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 active:bg-teal-700"
       onClick={() => enqueueSnackbar("This is a demo.")}
     >
       Sign In
@@ -73,7 +73,7 @@ function MobileMenu({
             href={item.href}
             className={classNames(
               item.current
-                ? "border-theme bg-teal-50 text-theme hover:border-theme"
+                ? "border-brand bg-teal-50 text-brand hover:border-brand"
                 : "border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800",
               "block border-l-4 py-2 pl-3 pr-4 text-base font-medium"
             )}
@@ -97,7 +97,7 @@ export function AppBar() {
     <Disclosure as="nav" className="border-b border-gray-200 bg-white">
       {({ open }) => (
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 justify-between">
+          <div className="flex h-24 justify-between">
             <div className="flex">
               <div className="flex shrink-0 items-center">
                 <Masthead />
@@ -110,7 +110,7 @@ export function AppBar() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "border-theme text-gray-900"
+                      ? "border-brand text-gray-900 hover:border-teal-800 hover:text-teal-800"
                       : "border-transparent text-gray-600 hover:border-gray-300 hover:text-gray-700",
                     "inline-flex items-center border-b-2 px-1 pt-1 text-md font-medium"
                   )}
