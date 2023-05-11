@@ -29,7 +29,10 @@ function FeatureParagraph({
 
 export function AboutSection() {
   return (
-    <section className="bg-cream bg-[url('/assets/index/about-background.svg')] bg-contain bg-no-repeat py-20">
+    <section
+      className="bg-cream bg-contain bg-no-repeat py-20"
+      style={{ backgroundImage: "url(/assets/index/bg/about-bg.svg)" }}
+    >
       <div className="mx-auto max-w-5xl sm:px-6 lg:px-8">
         <h2 className="mb-4 text-center font-brand text-4xl text-brand md:text-5xl">
           <img
@@ -44,7 +47,7 @@ export function AboutSection() {
             className="ml-4 inline h-6 align-middle"
           />
         </h2>
-        <div className="mx-4 mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:text-left">
+        <div className="mx-4 mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>
             <p className="mb-4">
               <span className="font-semibold">Our mission</span> is to
