@@ -12,7 +12,7 @@ export function Button(props: {
     <button
       type="button"
       className={classNames(
-        "items-center justify-center rounded-full font-semibold shadow-sm transition duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+        "items-center justify-center rounded-full font-semibold shadow-sm transition duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:animate-pulse-fast",
         {
           "px-2 py-1 text-xs": size === "xs",
           "px-2 py-1 text-sm": size === "sm",
