@@ -26,7 +26,7 @@ function Masthead() {
     <Link href="/">
       <img
         className="block h-14 w-auto"
-        src="/assets/nav/usourced-masthead.png"
+        src="/images/nav/usourced-masthead.png"
         alt="USourced"
       />
     </Link>

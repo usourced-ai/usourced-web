@@ -31,18 +31,18 @@ export function AboutSection() {
   return (
     <section
       className="bg-cream bg-contain bg-no-repeat py-20"
-      style={{ backgroundImage: "url(/assets/index/bg/about-bg.svg)" }}
+      style={{ backgroundImage: "url(/images/index/bg/about-bg.svg)" }}
     >
       <div className="mx-auto max-w-5xl sm:px-6 lg:px-8">
         <h2 className="mb-4 text-center font-brand text-4xl text-brand md:text-5xl">
           <img
-            src="/assets/index/star.png"
+            src="/images/index/star.png"
             alt=""
             className="mr-4 inline h-6 align-middle"
           />
           About USourced
           <img
-            src="/assets/index/star.png"
+            src="/images/index/star.png"
             alt=""
             className="ml-4 inline h-6 align-middle"
           />

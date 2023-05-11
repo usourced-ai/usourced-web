@@ -61,7 +61,7 @@ function NewsletterSection() {
 export function AppFooter() {
   return (
     <footer
-      className="mt-20 bg-[url('/assets/footer/footer-background.svg')] bg-cover bg-no-repeat"
+      className="mt-20 bg-[url('/images/footer/footer-background.svg')] bg-cover bg-no-repeat"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -72,7 +72,7 @@ export function AppFooter() {
         <div className="mt-10 border-t border-white/10 pt-8">
           <img
             className="h-10"
-            src="/assets/footer/usourced-masthead-white.png"
+            src="/images/footer/usourced-masthead-white.png"
             alt="USourced"
           />
         </div>
