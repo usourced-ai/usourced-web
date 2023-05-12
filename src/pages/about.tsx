@@ -1,6 +1,7 @@
 import { AboutSection } from "@/components/index/AboutSection";
 import { CatalogSection } from "@/components/index/CatalogSection";
 import { HeroSection } from "@/components/index/HeroSection";
+import { OurPromiseSection } from "@/components/index/OurPromiseSection";
 import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
 import { AppConfig } from "@/utils/AppConfig";
@@ -15,6 +16,7 @@ export default function About() {
       <HeroSection />
       <AboutSection />
       <CatalogSection />
+      <OurPromiseSection />
     </AppLayout>
   );
 }
