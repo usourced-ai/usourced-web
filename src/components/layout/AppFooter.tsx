@@ -30,10 +30,8 @@ function NewsletterSection() {
         <input
           type="email"
           name="email-address"
-          id="newsletter-email-address"
           autoComplete="email"
-          required
-          className="w-full min-w-0 appearance-none rounded-full border-0 bg-white/5 px-3 py-1.5 text-base text-brand shadow-sm ring-1 ring-inset ring-white/10 transition duration-500 placeholder:text-gray-500 hover:bg-white/70 focus:bg-white/80 focus:ring-white/10 sm:w-56 sm:text-sm sm:leading-6"
+          className="w-full min-w-0 appearance-none rounded-full border-0 bg-white/5 px-5 py-1.5 text-base text-brand shadow-sm ring-1 ring-inset ring-white/10 transition duration-500 placeholder:text-gray-500 hover:bg-white/70 focus:bg-white/80 focus:ring-white/10 sm:w-64 sm:text-sm sm:leading-6"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
