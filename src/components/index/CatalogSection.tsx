@@ -31,11 +31,11 @@ export function CatalogSection() {
   const categories = getProductCategories();
   return (
     <section
-      className="bg-cream bg-no-repeat pb-12 pt-8"
+      className="bg-no-repeat"
       style={{
         backgroundImage:
           "url(/images/index/bg/orange-1.svg), url(/images/index/bg/orange-2.svg)",
-        backgroundPosition: "bottom 200px left 0px, top 100px right 0px",
+        backgroundPosition: "top 120px left 0px, top 20px right 0px",
         backgroundSize: "20vw",
       }}
     >

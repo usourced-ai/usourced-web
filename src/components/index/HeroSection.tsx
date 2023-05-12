@@ -70,7 +70,7 @@ function ProductImages() {
 
 export function HeroSection() {
   return (
-    <section className="mt-2 bg-cream bg-contain bg-no-repeat">
+    <section className="mt-2">
       <div
         className="relative mx-auto max-w-7xl overflow-hidden rounded-[48px] text-cream sm:px-6 lg:px-8"
         style={{
