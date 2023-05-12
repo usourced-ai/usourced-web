@@ -16,7 +16,7 @@ export function AppLayout({
       {meta}
       <AppBar />
       <DemoBanner />
-      <main className="min-h-full bg-cream">{children}</main>
+      <main className="min-h-full bg-cream pb-20">{children}</main>
       <AppFooter />
     </>
   );

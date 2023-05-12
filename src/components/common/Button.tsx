@@ -4,7 +4,7 @@ export function Button(props: {
   children: React.ReactNode;
   className?: string;
   color?: "brand" | "grass";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
   [key: string]: any;
 }) {
   const { children, className, color = "brand", size = "md", ...rest } = props;
@@ -19,6 +19,7 @@ export function Button(props: {
           "px-2.5 py-1.5 text-sm": size === "md",
           "px-3 py-2 text-base": size === "lg",
           "px-3.5 py-2.5 text-base": size === "xl",
+          "px-4 py-3 text-lg": size === "2xl",
         },
         {
           "bg-brand text-cream hover:bg-teal-800 focus-visible:outline-teal-700 active:bg-teal-700":

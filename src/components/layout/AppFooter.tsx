@@ -59,7 +59,7 @@ function NewsletterSection() {
 export function AppFooter() {
   return (
     <footer
-      className="mt-20 bg-[url('/images/footer/footer-background.svg')] bg-cover bg-no-repeat"
+      className="bg-[url('/images/footer/footer-background.svg')] bg-cover bg-no-repeat"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
