@@ -36,11 +36,51 @@ function SignUpCard() {
   );
 }
 
+function ProductImages() {
+  return (
+    <>
+      <img
+        src="/images/index/products/phone-stand.png"
+        alt="Lavender Phone Stand"
+        className="animate__animated animate__bounceIn animate__delay-1s absolute left-[-40px] top-[-60px] w-[300px]"
+      />
+      <img
+        src="/images/index/products/mug.png"
+        alt="Pink Cloud Mug"
+        className="animate__animated animate__bounceIn animate__delay-2s absolute left-[260px] top-[28px] w-[280px]"
+      />
+      <img
+        src="/images/index/products/fan.png"
+        alt="Green Desk Fan"
+        className="animate__animated animate__bounceIn animate__delay-1s absolute left-[580px] top-[-80px] w-[240px]"
+      />
+      <img
+        src="/images/index/products/cat.png"
+        alt="Fluffy White Cat Plushie"
+        className="animate__animated animate__bounceIn animate__delay-2s absolute left-[860px] top-[70px] w-[240px]"
+      />
+      <img
+        src="/images/index/products/backpack.png"
+        alt="Yellow Backpack"
+        className="animate__animated animate__bounceIn animate__delay-1s absolute left-[1110px] top-[-70px] w-[280px] rotate-12"
+      />
+    </>
+  );
+}
+
 export function HeroSection() {
   return (
     <section className="mt-2 bg-cream bg-contain bg-no-repeat">
-      <div className="mx-auto max-w-7xl rounded-[24px] bg-brand text-cream sm:px-6 lg:px-8">
-        <div className="mx-4 grid grid-cols-1 gap-8 pb-28 pt-80 xl:grid-cols-2">
+      <div
+        className="relative mx-auto max-w-7xl overflow-hidden rounded-[48px] text-cream sm:px-6 lg:px-8"
+        style={{
+          backgroundImage: "url('/images/index/bg/hero-bg.svg')",
+          backgroundPosition: "bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <ProductImages />
+        <div className="mx-4 grid grid-cols-1 gap-8 pb-28 pt-56 sm:pt-80 xl:grid-cols-2">
           <div className="font-brand text-4xl uppercase sm:text-6xl">
             <h1>You dream it,</h1>
             <div className="animate__animated animate__tada mt-4 inline-block rounded-full bg-cream px-6 py-4 text-brand xl:ml-4">
