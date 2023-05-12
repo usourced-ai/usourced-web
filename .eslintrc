@@ -68,6 +68,14 @@
           {
             "argsIgnorePattern": "^_"
           }
+        ],
+        "tailwindcss/no-custom-classname": [
+          "error",
+          {
+            "whitelist": [
+              "animate__.*"
+            ]
+          }
         ]
       }
     },
