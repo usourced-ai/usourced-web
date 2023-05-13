@@ -73,6 +73,7 @@
           "error",
           {
             "whitelist": [
+              "__.*",
               "animate__.*"
             ]
           }

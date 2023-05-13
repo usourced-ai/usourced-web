@@ -43,6 +43,9 @@ dependencies:
   recoil:
     specifier: ^0.7.7
     version: 0.7.7(react-dom@18.2.0)(react@18.2.0)
+  scrollreveal:
+    specifier: ^4.0.9
+    version: 4.0.9
 
 devDependencies:
   "@commitlint/cli":
@@ -102,6 +105,9 @@ devDependencies:
   "@testing-library/react":
     specifier: ^14.0.0
     version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+  "@types/he":
+    specifier: ^1.2.0
+    version: 1.2.0
   "@types/jest":
     specifier: ^29.5.1
     version: 29.5.1
@@ -111,6 +117,9 @@ devDependencies:
   "@types/react":
     specifier: ^18.2.6
     version: 18.2.6
+  "@types/scrollreveal":
+    specifier: ^0.0.8
+    version: 0.0.8
   "@typescript-eslint/eslint-plugin":
     specifier: ^5.59.5
     version: 5.59.5(@typescript-eslint/parser@5.59.5)(eslint@8.40.0)(typescript@5.0.4)
@@ -6510,6 +6519,13 @@ packages:
       "@types/node": 20.1.1
     dev: true
 
+  /@types/he@1.2.0:
+    resolution:
+      {
+        integrity: sha512-uH2smqTN4uGReAiKedIVzoLUAXIYLBTbSofhx3hbNqj74Ua6KqFsLYszduTrLCMEAEAozF73DbGi/SC1bzQq4g==,
+      }
+    dev: true
+
   /@types/html-minifier-terser@6.1.0:
     resolution:
       {
@@ -6750,6 +6766,13 @@ packages:
     resolution:
       {
         integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==,
+      }
+    dev: true
+
+  /@types/scrollreveal@0.0.8:
+    resolution:
+      {
+        integrity: sha512-HwD3vSmxjEozI4+uHY7pPxB47gppsv0racBHZreEQFC6K1kBKaIUkCTwUMH6gGFEDmLrgOckfGsTvR/n2yyV6g==,
       }
     dev: true
 
@@ -13576,6 +13599,22 @@ packages:
     hasBin: true
     dev: true
 
+  /is-dom-node-list@1.2.1:
+    resolution:
+      {
+        integrity: sha512-P1H071iT5TGG8pAHslhrLDo/tQLYc8tGuWABVqhGU4l2mm7aDNb9cx2myQ2AujEQO6B2cAujcW4a0/+6UfXInw==,
+      }
+    dependencies:
+      is-dom-node: 1.0.4
+    dev: false
+
+  /is-dom-node@1.0.4:
+    resolution:
+      {
+        integrity: sha512-NEnTHKCeyGJTL0cKdzATF8SWzyTMYf5CbNKWBvsXvyMxZG32g+a09qkeCbrfQNLTD85CbPeHb4YjIJCjyzF0yA==,
+      }
+    dev: false
+
   /is-extglob@2.1.1:
     resolution:
       {
@@ -16430,6 +16469,13 @@ packages:
       }
     engines: { node: ">=8" }
     dev: true
+
+  /miniraf@1.0.0:
+    resolution:
+      {
+        integrity: sha512-XpvhtJYzVrpXe+JoAthrT9E40NIrSDDMcdHEYL2M+lR/OCas0nadetcBBq/MWYqlgV5aDWVQ3mfAqd+fG6Y/EQ==,
+      }
+    dev: false
 
   /minizlib@2.1.2:
     resolution:
@@ -19336,6 +19382,13 @@ packages:
       unist-util-visit: 2.0.3
     dev: true
 
+  /rematrix@0.3.0:
+    resolution:
+      {
+        integrity: sha512-xB/9ZvJIKaDgXX0qkvV9/pLD8zK23A6TVV6F8Vhsl+SrxbBeVYutz5uszxgC6Rt3RP9LZiH8OXaYjr+x6WXWmQ==,
+      }
+    dev: false
+
   /renderkid@3.0.0:
     resolution:
       {
@@ -19732,6 +19785,18 @@ packages:
       ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
     dev: true
+
+  /scrollreveal@4.0.9:
+    resolution:
+      {
+        integrity: sha512-fefGvzVS8YbXbDK1+T0kvy2yqxaiBJZeGUhPeqajf+7sGqtX4xikbKGAlzQuPCpswAMswx94ZwhDjXKnRIqW1w==,
+      }
+    requiresBuild: true
+    dependencies:
+      miniraf: 1.0.0
+      rematrix: 0.3.0
+      tealight: 0.3.6
+    dev: false
 
   /secure-compare@3.0.1:
     resolution:
@@ -20835,6 +20900,16 @@ packages:
       mkdirp: 1.0.4
       yallist: 4.0.0
     dev: true
+
+  /tealight@0.3.6:
+    resolution:
+      {
+        integrity: sha512-Dys3N8jFBThD9pNVpPCyUiu6DfWcTBdqWQJIvnAuVaFkGEdrPBJ43070vVbn6sTlLvn2IQK2zFW4FrVIrTo8eQ==,
+      }
+    dependencies:
+      is-dom-node: 1.0.4
+      is-dom-node-list: 1.2.1
+    dev: false
 
   /telejson@7.1.0:
     resolution:

@@ -3,17 +3,25 @@ import "../styles/global.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import { SnackbarProvider } from "notistack";
+import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+function useScrollRevealEffect() {
+  useEffect(() => {
+    async function effect() {
+      const ScrollReveal = (await import("scrollreveal")).default;
+      ScrollReveal().reveal(".__scrollreveal", {
+        delay: 200,
+        distance: "100px",
+      });
+    }
+    effect();
+  });
+}
+
+function GoogleAnalytics() {
   return (
     <>
-      <RecoilRoot>
-        <SnackbarProvider>
-          <Component {...pageProps} />
-        </SnackbarProvider>
-      </RecoilRoot>
-
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-EDYBRW20MH"
@@ -28,6 +36,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'G-EDYBRW20MH');
         `}
       </Script>
+    </>
+  );
+}
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  useScrollRevealEffect();
+  return (
+    <>
+      <RecoilRoot>
+        <SnackbarProvider>
+          <Component {...pageProps} />
+        </SnackbarProvider>
+      </RecoilRoot>
+      <GoogleAnalytics />
     </>
   );
 }

@@ -31,7 +31,7 @@ export function CatalogSection() {
   const categories = getProductCategories();
   return (
     <section
-      className="bg-no-repeat"
+      className="__scrollreveal bg-no-repeat"
       style={{
         backgroundImage:
           "url(/images/index/bg/orange-1.svg), url(/images/index/bg/orange-2.svg)",

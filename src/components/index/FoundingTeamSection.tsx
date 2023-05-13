@@ -41,7 +41,7 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
 export function FoundingTeamSection() {
   return (
     <section
-      className="bg-no-repeat"
+      className="__scrollreveal bg-no-repeat"
       style={{
         backgroundImage:
           "url(/images/index/bg/green-1.svg), url(/images/index/bg/green-2.svg)",

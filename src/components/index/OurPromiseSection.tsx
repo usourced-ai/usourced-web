@@ -32,7 +32,7 @@ function ValueCard({
 
 export function OurPromiseSection() {
   return (
-    <section className="mt-10">
+    <section className="__scrollreveal mt-10">
       <div className="mx-auto max-w-5xl py-20 sm:px-6 lg:px-8">
         <div
           className="h-10 bg-cover"

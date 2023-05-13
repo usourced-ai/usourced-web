@@ -7,7 +7,7 @@ export function CustomSourcingSection() {
   const [hovered, setHovered] = useState(false);
   return (
     <section
-      className="bg-contain bg-no-repeat"
+      className="__scrollreveal bg-contain bg-no-repeat"
       style={{
         backgroundImage: "url(/images/index/bg/starfish.svg)",
         backgroundPosition: "bottom 0px left -5vw",
