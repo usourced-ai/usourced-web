@@ -74,7 +74,7 @@ export default function TeamMemberProfileSlideout({
                         alt={member.name}
                         className="mx-auto h-40 w-40 rounded-full"
                       />
-                      <h2 className="mt-2 font-brand text-3xl">
+                      <h2 className="mt-4 font-brand text-3xl">
                         {member.name}
                       </h2>
                       <p className="text-gray-500">{member.title}</p>

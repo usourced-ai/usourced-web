@@ -3,12 +3,11 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useSnackbar } from "notistack";
 
 import { Button } from "@/components/common/Button";
+import { demoAlert } from "@/utils/demo_utils";
 
 const NAVIGATION_LINKS = [
-  { name: "About", href: "/about" },
   { name: "Custom Request", href: "/custom-request" },
   { name: "Catalog Products", href: "/contact" },
   { name: "AI Sourcing Agent", href: "/contact" },
@@ -34,9 +33,8 @@ function Masthead() {
 }
 
 function SignInButton() {
-  const { enqueueSnackbar } = useSnackbar();
   return (
-    <Button size="xl" onClick={() => enqueueSnackbar("This is a demo.")}>
+    <Button size="xl" onClick={demoAlert}>
       Sign In
     </Button>
   );
