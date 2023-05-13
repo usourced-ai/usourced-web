@@ -10,6 +10,8 @@ export function CustomSourcingSection() {
       className="bg-contain bg-no-repeat"
       style={{
         backgroundImage: "url(/images/index/bg/starfish.svg)",
+        backgroundPosition: "bottom 0px left -5vw",
+        backgroundSize: "20vw",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -20,19 +22,19 @@ export function CustomSourcingSection() {
           src="/images/index/we-source-it.png"
           alt="We Source It"
         />
-        <h1 className="mb-4 font-brand text-4xl leading-tight md:text-5xl md:leading-tight">
+        <h1 className="font-brand text-4xl leading-tight md:text-5xl md:leading-tight">
           Want it? <br />
           We&rsquo;ll source it.
         </h1>
-        <p className="mb-4">
+        <p className="mt-4">
           Can&rsquo;t find exactly what you&rsquo;re looking for? Don&rsquo;t
           worry &ndash; we got you.
         </p>
-        <p className="mb-4">
+        <p className="mt-4">
           Whether you want to source a product not on our website, or simply
           want to make a few tweaks to an existing product, USourced can help.
         </p>
-        <div>
+        <div className="mt-6">
           <Button
             color="brand"
             size="2xl"

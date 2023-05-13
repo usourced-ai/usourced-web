@@ -24,7 +24,7 @@ function ValueCard({
       >
         <img src={icon} alt={title} className="" />
       </div>
-      <h2 className="mt-6 font-brand text-xl">{title}</h2>
+      <h2 className="mt-6 text-xl font-medium">{title}</h2>
       <p className="mt-3 text-sm">{children}</p>
     </div>
   );

@@ -16,6 +16,9 @@ dependencies:
   firebase:
     specifier: ^9.21.0
     version: 9.21.0
+  he:
+    specifier: ^1.2.0
+    version: 1.2.0
   next:
     specifier: ^13.4.1
     version: 13.4.1(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
@@ -12935,7 +12938,6 @@ packages:
         integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==,
       }
     hasBin: true
-    dev: true
 
   /homedir-polyfill@1.0.3:
     resolution:

@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { collection, doc, getFirestore, setDoc } from "firebase/firestore";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { useEffect, useState } from "react";
 
 export const app = initializeApp({
   apiKey: process.env.FIREBASE_API_KEY,
@@ -13,6 +15,8 @@ export const app = initializeApp({
 
 export const db = getFirestore(app);
 
+export const storage = getStorage(app);
+
 export const NEWSLETTER_SUBSCRIBERS_COL = "newsletter_subscribers";
 
 export async function addNewsletterSubscriber(
@@ -24,4 +28,26 @@ export async function addNewsletterSubscriber(
     funnel,
     created_at: new Date(),
   });
+}
+
+export function useFirestoreImage({ path }: { path: string }) {
+  const [image, setImage] = useState<string | null>(null);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    async function effect() {
+      try {
+        const url = await getDownloadURL(ref(storage, path));
+        setImage(url);
+      } catch (e: any) {
+        setError(e);
+      }
+    }
+    effect();
+  }, [path]);
+
+  return {
+    image,
+    error,
+  };
 }
