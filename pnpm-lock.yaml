@@ -10,6 +10,9 @@ dependencies:
   "@tailwindcss/forms":
     specifier: ^0.5.3
     version: 0.5.3(tailwindcss@3.3.2)
+  "@typeform/embed":
+    specifier: ^2.11.0
+    version: 2.11.0
   classnames:
     specifier: ^2.3.2
     version: 2.3.2
@@ -6339,6 +6342,14 @@ packages:
       {
         integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==,
       }
+
+  /@typeform/embed@2.11.0:
+    resolution:
+      {
+        integrity: sha512-MEckCfqsqj4z00w5b3D4nK1ix4Elm15L4xsgAkFX7NuCLETa9TZD/vqARlBb63yqR5tPD4LW1mw/ftBBoeIQgA==,
+      }
+    engines: { node: ">=10" }
+    dev: false
 
   /@types/aria-query@5.0.1:
     resolution:

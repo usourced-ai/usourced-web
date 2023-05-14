@@ -6,7 +6,7 @@ import { AppConfig } from "@/utils/AppConfig";
 
 type IMetaProps = {
   title: string;
-  description: string;
+  description?: string;
   canonical?: string;
 };
 
@@ -50,6 +50,7 @@ export function Meta(props: IMetaProps) {
       </Head>
       <NextSeo
         title={props.title}
+        titleTemplate={`%s | ${AppConfig.site_name}`}
         description={props.description}
         canonical={props.canonical}
         openGraph={{
