@@ -49,7 +49,7 @@ export function FoundingTeamSection() {
         backgroundSize: "20vw",
       }}
     >
-      <div className="mx-auto max-w-5xl text-center text-brand sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-lg text-center text-brand sm:px-6 lg:px-8">
         <h1 className="font-brand text-4xl md:text-5xl">Meet the Team</h1>
         <div className="mx-4 mt-8 grid grid-cols-2 gap-2 md:grid-cols-4">
           {FOUNDING_TEAM_MEMBERS.map((member) => (

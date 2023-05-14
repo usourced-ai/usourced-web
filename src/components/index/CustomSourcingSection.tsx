@@ -16,7 +16,7 @@ export function CustomSourcingSection() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-lg px-4 py-10 sm:px-6 lg:px-8">
         <img
           className="ml-16 h-80 sm:float-right"
           src="/images/index/we-source-it.png"

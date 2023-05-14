@@ -33,7 +33,7 @@ export function AboutSection() {
       className="mt-4 bg-contain bg-no-repeat py-20"
       style={{ backgroundImage: "url(/images/index/bg/about-bg.svg)" }}
     >
-      <div className="mx-auto max-w-5xl sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-lg sm:px-6 lg:px-8">
         <h2 className="mb-4 text-center font-brand text-4xl text-brand md:text-5xl">
           <img
             src="/images/index/star.png"

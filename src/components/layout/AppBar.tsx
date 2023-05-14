@@ -10,7 +10,7 @@ import { demoAlert } from "@/utils/demo_utils";
 const NAVIGATION_LINKS = [
   { name: "Custom Request", href: "/custom-request" },
   { name: "Catalog Products", href: "/contact" },
-  { name: "AI Sourcing Agent", href: "/contact" },
+  { name: "AI Sourcing Agent", href: "/ai-sourcing-agent" },
   { name: "Project Dashboard", href: "/contact" },
 ];
 
