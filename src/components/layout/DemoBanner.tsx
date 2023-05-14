@@ -6,7 +6,7 @@ export function DemoBanner() {
       {() => (
         <Disclosure.Panel>
           <div className="flex items-center justify-center gap-x-6 bg-brand px-6 py-1 sm:px-3 sm:before:flex-1">
-            <p className="flex-auto font-brand text-base uppercase text-cream">
+            <p className="flex-auto font-brand text-sm uppercase text-cream sm:text-base">
               Demo site - we are launching in Q3 2023
             </p>
           </div>

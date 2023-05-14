@@ -5,7 +5,7 @@ import { useNewsletterSubscription } from "@/api/newsletter_subscription";
 function SignUpCard() {
   const { email, setEmail, subscribe } = useNewsletterSubscription();
   return (
-    <div className="mx-auto -mt-16 w-[440px] rounded-2xl bg-peachy px-8 py-4 drop-shadow-xl">
+    <div className="mx-auto -mt-16 w-full rounded-2xl bg-peachy px-8 py-4 drop-shadow-xl sm:w-[440px]">
       <h4>Sign up and be the first to know when we launch:</h4>
       <div className="mt-2 flex rounded-full shadow-sm">
         <div className="relative flex grow items-stretch">
