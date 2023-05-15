@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 import { FOUNDING_TEAM_MEMBERS, type MemberProfile } from "@/api/founding_team";
+import TeamMemberProfileSlideout from "@/components/index/TeamMemberProfileSlideout";
 import { useFirestoreImage } from "@/utils/firebase";
-
-import TeamMemberProfileSlideout from "./TeamMemberProfileSlideout";
 
 const DEFAULT_PROFILE_IMAGE_URL = "/home/silhouette.png";
 

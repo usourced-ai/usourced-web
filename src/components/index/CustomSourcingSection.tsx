@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
 
-import { Button } from "../common/Button";
+import { Button } from "@/components/common/Button";
 
 export function CustomSourcingSection() {
   const [hovered, setHovered] = useState(false);
