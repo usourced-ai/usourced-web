@@ -1,7 +1,7 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
 
+import { ChatMessageListView } from "../common/chat/ChatMessageListView";
 import { ChatInput } from "./ChatInput";
-import { ChatMessageListView } from "./ChatMessageListView";
 
 export function AIChatSlideout() {
   return (
@@ -11,7 +11,7 @@ export function AIChatSlideout() {
           <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
         </div>
         <div className="mt-3 text-center">
-          <ChatMessageListView />
+          <ChatMessageListView messages={[]} />
           <ChatInput />
         </div>
       </div>

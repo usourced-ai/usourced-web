@@ -43,7 +43,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "recoil": "^0.7.7",
-    "scrollreveal": "^4.0.9"
+    "scrollreveal": "^4.0.9",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
