@@ -19,7 +19,6 @@ export function useNewsletterSubscription() {
           { variant: "success" }
         );
         setEmail("");
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
         enqueueSnackbar(err.message, {
           variant: "error",
