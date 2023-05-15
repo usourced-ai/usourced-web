@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button } from "@/components/common/Button";
+import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
   title: "Button",
@@ -15,14 +15,14 @@ const render = (args: Story["args"]) => (
   <Button {...args}>{args ? args.label ?? "Button" : "Button"}</Button>
 );
 
-export const DefaultButton: Story = {
+export const Default: Story = {
   args: {},
   render,
 };
 
-export const LongButton: Story = {
+export const LongLabel: Story = {
   args: {
-    label: "This is a long button",
+    label: "This is a very long label for a button",
   },
   render,
 };
