@@ -1,18 +1,26 @@
-import { CheckIcon } from "@heroicons/react/24/outline";
+import { useRecoilValue } from "recoil";
 
-import { ChatMessageListView } from "../common/chat/ChatMessageListView";
-import { ChatInput } from "./ChatInput";
+import { ChatInput } from "@/components/ai-sourcing/ChatInput";
+import { ChatMessageListView } from "@/components/common/chat/ChatMessageListView";
+import {
+  AiSourcingChatStateAtom,
+  useAiSourcingDemoScene,
+} from "@/models/demo-scenes/ai-sourcing-playbook";
 
 export function AIChatSlideout() {
+  const chatState = useRecoilValue(AiSourcingChatStateAtom);
+  const { advanceSceneWithResponse } = useAiSourcingDemoScene();
   return (
-    <div className="max-h-[75vh] rounded-lg bg-white/50 shadow-xl backdrop-blur sm:mt-8 sm:w-full sm:p-6">
+    <div className="rounded-lg bg-white/50 shadow-xl backdrop-blur sm:mt-8 sm:w-full sm:p-4 sm:px-6">
       <div>
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-          <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
+        <div
+          className="mt-2 overflow-y-auto"
+          style={{ height: "calc(100vh - 320px)" }}
+        >
+          <ChatMessageListView chatState={chatState} />
         </div>
-        <div className="mt-3 text-center">
-          <ChatMessageListView messages={[]} />
-          <ChatInput />
+        <div className="mt-6">
+          <ChatInput onSend={advanceSceneWithResponse} />
         </div>
       </div>
     </div>

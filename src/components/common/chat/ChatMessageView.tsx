@@ -1,3 +1,6 @@
+import classNames from "classnames";
+import { useState } from "react";
+
 import { Avatar } from "@/components/common/Avatar";
 import { MessageTimeView } from "@/components/common/chat/MessageTimeView";
 import { MessageView } from "@/components/common/chat/MessageView";
@@ -8,6 +11,11 @@ function ChatMessageFromMeView({ message }: { message: ChatMessage }) {
     <div className="ml-20 flex items-end text-right">
       <div className="mr-4 flex-1">
         <MessageView message={message} />
+        {message.payload && (
+          <div className="mt-1 flex">
+            <div className="ml-auto">{message.payload}</div>
+          </div>
+        )}
         <MessageTimeView message={message} />
       </div>
       <Avatar user={message.from} />
@@ -16,11 +24,25 @@ function ChatMessageFromMeView({ message }: { message: ChatMessage }) {
 }
 
 function ChatMessageFromRemoteView({ message }: { message: ChatMessage }) {
+  const [isTyping, setIsTyping] = useState(true);
   return (
-    <div className="mr-20 flex items-start">
+    <div className="mr-20 flex items-start text-left">
       <Avatar user={message.from} />
       <div className="ml-4 flex-1">
-        <MessageView message={message} typewriter />
+        <MessageView
+          message={message}
+          typewriter
+          onFinishTyping={() => setIsTyping(false)}
+        />
+        {message.payload && (
+          <div
+            className={classNames("transition duration-300 mt-1 flex", {
+              "opacity-0": isTyping,
+            })}
+          >
+            {message.payload}
+          </div>
+        )}
         <MessageTimeView message={message} />
       </div>
     </div>

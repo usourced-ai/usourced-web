@@ -33,6 +33,9 @@ module.exports = {
         sans: ["Karla", "sans-serif"],
         brand: ["Tenor Sans", "sans-serif"],
       },
+      fontSize: {
+        "2xs": "0.625rem",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

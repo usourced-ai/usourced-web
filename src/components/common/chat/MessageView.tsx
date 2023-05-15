@@ -5,20 +5,22 @@ import type { ChatMessage } from "@/models/chat";
 export function MessageView({
   message,
   typewriter,
+  onFinishTyping,
 }: {
   message: ChatMessage;
   typewriter?: boolean;
+  onFinishTyping?: () => void;
 }): JSX.Element {
   return (
-    <div>
+    <div className="text-sm">
       {typewriter ? (
         <Typewriter
-          options={{
-            strings: message.text,
-            cursor: "",
-            autoStart: true,
-            delay: 10,
+          onInit={(tw) => {
+            tw.typeString(message.text)
+              .callFunction(() => onFinishTyping?.())
+              .start();
           }}
+          options={{ delay: 10, cursor: "" }}
         />
       ) : (
         message.text
