@@ -26,3 +26,32 @@ export const LongLabel: Story = {
   },
   render,
 };
+
+export const Grass: Story = {
+  args: {
+    color: "grass",
+  },
+  render,
+};
+
+export const Outlined: Story = {
+  args: {
+    color: "brand",
+    variant: "outlined",
+  },
+  render,
+};
+
+export const Small: Story = {
+  args: {
+    size: "sm",
+  },
+  render,
+};
+
+export const ExtraSmall: Story = {
+  args: {
+    size: "xs",
+  },
+  render,
+};
