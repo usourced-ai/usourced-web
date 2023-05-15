@@ -12,7 +12,6 @@ function SignUpCard() {
           <input
             className="w-full rounded-none rounded-l-full border-0 py-2 pl-5 leading-8 text-gray-900 ring-1 ring-inset ring-brand transition duration-500 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand"
             type="email"
-            name="email"
             autoComplete="email"
             placeholder="Enter your email"
             value={email}
@@ -29,7 +28,7 @@ function SignUpCard() {
           className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-full bg-brand px-3 py-2 text-cream ring-1 ring-inset ring-brand transition duration-500 hover:bg-gray-50 hover:text-brand"
           onClick={subscribe}
         >
-          <BellAlertIcon className="-ml-0.5 h-6 w-6" aria-hidden="true" />
+          <BellAlertIcon className="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
     </div>
