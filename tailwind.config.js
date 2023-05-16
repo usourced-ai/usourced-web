@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "pulse-fast": "pulse 0.5s cubic-bezier(0.4, 0, 0.6, 1)",
+        "pulse-fast-once": "pulse 0.5s cubic-bezier(0.4, 0, 0.6, 1)",
       },
       colors: {
         brand: "#183439",

@@ -1,9 +1,20 @@
+import { enqueueSnackbar } from "notistack";
+import { useEffect } from "react";
+
 import { AIChatSlideout } from "@/components/ai-sourcing/AIChatSlideout";
 import { AIProductView } from "@/components/ai-sourcing/AIProductView";
 import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
 
 export default function AiSourcingAgentPage() {
+  useEffect(() => {
+    setTimeout(() => {
+      enqueueSnackbar(
+        "To see the AI Sourcing Agent in action, simply press send message button.",
+        { persist: true, key: "ai-sourcing-agent-demo", className: "text-xl" }
+      );
+    }, 1000);
+  }, []);
   return (
     <AppLayout meta={<Meta title="AI Product Sourcing" />}>
       <section

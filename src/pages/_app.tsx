@@ -1,10 +1,11 @@
-import "../styles/global.css";
+import "@/styles/global.css";
 
 import type { AppProps } from "next/app";
 import Script from "next/script";
-import { SnackbarProvider } from "notistack";
 import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
+
+import { NotistackProvider } from "@/layouts/NotistackProvider";
 
 function useScrollRevealEffect() {
   useEffect(() => {
@@ -45,9 +46,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
-        <SnackbarProvider>
+        <NotistackProvider>
           <Component {...pageProps} />
-        </SnackbarProvider>
+        </NotistackProvider>
       </RecoilRoot>
       <GoogleAnalytics />
     </>
