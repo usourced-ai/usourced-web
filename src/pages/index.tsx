@@ -21,6 +21,7 @@ export default function IndexPage() {
       meta={
         <Meta title={AppConfig.title} description={AppConfig.description} />
       }
+      showDemoBar
     >
       <HeroSection />
       <AboutSection />

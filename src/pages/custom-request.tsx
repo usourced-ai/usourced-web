@@ -58,7 +58,3 @@ export default function CustomRequestIndexPage() {
     </AppLayout>
   );
 }
-
-// export default dynamic(() => Promise.resolve(CustomRequestIndexPage), {
-//   ssr: false,
-// });

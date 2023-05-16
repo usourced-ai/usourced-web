@@ -11,12 +11,16 @@ export default function AiSourcingAgentPage() {
     setTimeout(() => {
       enqueueSnackbar(
         "To see the AI Sourcing Agent in action, simply press send message button.",
-        { persist: true, key: "ai-sourcing-agent-demo", className: "text-xl" }
+        {
+          autoHideDuration: 30000,
+          key: "ai-sourcing-agent-demo",
+          className: "text-xl",
+        }
       );
     }, 1000);
   }, []);
   return (
-    <AppLayout meta={<Meta title="AI Product Sourcing" />}>
+    <AppLayout meta={<Meta title="AI Product Sourcing" />} showDemoBar>
       <section
         className="bg-contain bg-bottom bg-no-repeat"
         style={{ backgroundImage: "url(/images/index/bg/about-bg.svg)" }}
