@@ -60,7 +60,7 @@ function ButtonsPayload({
 function newSummaryItem(label: string, value: string): JSX.Element {
   return (
     <p>
-      <span className="font-medium">{label}: </span>
+      <span className="font-semibold">{label}: </span>
       {value}
     </p>
   );
@@ -72,7 +72,7 @@ const sceneDeltas = [
       "Welcome to USourced! What would you like to create today?",
       true
     ),
-    productName: "Your New Product",
+    productName: "Customize Your New Product with USourced AI",
   },
   {
     message: newMessage("I'm looking to create a custom plushie", false),
@@ -183,22 +183,22 @@ const sceneDeltas = [
       true,
       <div className="rounded-md border border-gray-200 bg-white p-2 px-4 text-sm">
         <p>
-          <span className="font-medium">Sampling Time:</span> 7 days
+          <span className="font-semibold">Sampling Time:</span> 7 days
         </p>
         <p>
-          <span className="font-medium">Production Time:</span> 15 days
+          <span className="font-semibold">Production Time:</span> 15 days
         </p>
         <p>
-          <span className="font-medium">Sampling Cost:</span> $100
+          <span className="font-semibold">Sampling Cost:</span> $100
         </p>
         <p>
-          <span className="font-medium">
+          <span className="font-semibold">
             Unit price with standard 30-day shipping:
           </span>{" "}
           $7.70
         </p>
         <p>
-          <span className="font-medium">
+          <span className="font-semibold">
             Unit price with express 7-day shipping:
           </span>{" "}
           $11.27
@@ -219,36 +219,36 @@ const sceneDeltas = [
       <div className="rounded-md border border-gray-200 bg-white p-2 px-4 text-sm">
         <h4 className="text-xl">Timeline Estimates</h4>
         <p>
-          <span className="font-medium">Sample placement date:</span>{" "}
+          <span className="font-semibold">Sample placement date:</span>{" "}
           {moment().add(1, "day").toDate().toLocaleDateString()}
         </p>
         <p>
-          <span className="font-medium">Sample ready date:</span>{" "}
+          <span className="font-semibold">Sample ready date:</span>{" "}
           {moment().add(7, "day").toDate().toLocaleDateString()}
         </p>
         <p>
-          <span className="font-medium">Bulk production placement date:</span>{" "}
+          <span className="font-semibold">Bulk production placement date:</span>{" "}
           {moment().add(8, "day").toDate().toLocaleDateString()}
         </p>
         <p>
-          <span className="font-medium">Bulk production ready date:</span>{" "}
+          <span className="font-semibold">Bulk production ready date:</span>{" "}
           {moment().add(15, "day").toDate().toLocaleDateString()}
         </p>
         <p>
-          <span className="font-medium">
+          <span className="font-semibold">
             Express shipment receiving date (100 units):
           </span>{" "}
           {moment().add(21, "day").toDate().toLocaleDateString()}
         </p>
         <p>
-          <span className="font-medium">
+          <span className="font-semibold">
             Standard shipment receiving date (900 units):
           </span>{" "}
           {moment().add(35, "day").toDate().toLocaleDateString()}
         </p>
         <h4 className="mt-2 text-xl">Total Order Cost</h4>
         <p>
-          <span className="font-medium">Sample + Production + Shipping:</span>{" "}
+          <span className="font-semibold">Sample + Production + Shipping:</span>{" "}
           $8157
         </p>
         <Button size="sm" variant="outlined" className="mt-2">
@@ -257,42 +257,44 @@ const sceneDeltas = [
       </div>
     ),
     summary: [
-      <div key="timeline">
-        <p>Timeline Estimates</p>
-        <p>
-          <span className="font-medium">Sample placement date:</span>{" "}
+      <div key="timeline" className="text-sm">
+        <h3 className="mt-4 text-2xl">Timeline Estimates</h3>
+        <p className="mt-1">
+          <span className="font-semibold">Sample placement date:</span>{" "}
           {moment().add(1, "day").toDate().toLocaleDateString()}
         </p>
-        <p>
-          <span className="font-medium">Sample ready date:</span>{" "}
+        <p className="mt-1">
+          <span className="font-semibold">Sample ready date:</span>{" "}
           {moment().add(7, "day").toDate().toLocaleDateString()}
         </p>
-        <p>
-          <span className="font-medium">Bulk production placement date:</span>{" "}
+        <p className="mt-1">
+          <span className="font-semibold">Bulk production placement date:</span>{" "}
           {moment().add(8, "day").toDate().toLocaleDateString()}
         </p>
-        <p>
-          <span className="font-medium">Bulk production ready date:</span>{" "}
+        <p className="mt-1">
+          <span className="font-semibold">Bulk production ready date:</span>{" "}
           {moment().add(15, "day").toDate().toLocaleDateString()}
         </p>
-        <p>
-          <span className="font-medium">
+        <p className="mt-1">
+          <span className="font-semibold">
             Express shipment receiving date (100 units):
           </span>{" "}
           {moment().add(21, "day").toDate().toLocaleDateString()}
         </p>
-        <p>
-          <span className="font-medium">
+        <p className="mt-1">
+          <span className="font-semibold">
             Standard shipment receiving date (900 units):
           </span>{" "}
           {moment().add(35, "day").toDate().toLocaleDateString()}
         </p>
-        <p>Total Order Cost</p>
-        <p>
-          <span className="font-medium">Sample + Production + Shipping:</span>{" "}
+        <h3 className="mt-4 text-2xl">Total Order Price</h3>
+        <p className="mt-1">
+          <span className="font-semibold">Sample + Production + Shipping:</span>{" "}
           $8157
         </p>
-        <Button size="sm">Place Order</Button>
+        <div className="mt-4">
+          <Button>Place Order</Button>
+        </div>
       </div>,
     ],
   },
@@ -333,14 +335,14 @@ function getScenesFromDeltas(deltas: SceneDelta[]): DemoScene[] {
 
 const scenes = getScenesFromDeltas(sceneDeltas);
 
-export const AiSourcingChatStateAtom = atom<ChatState>({
+const AiSourcingChatStateAtom = atom<ChatState>({
   key: "AiSourcingChatStateAtom",
   default: {
     messages: [],
   },
 });
 
-export const AiSourcingSceneNumberAtom = atom<number>({
+const AiSourcingSceneNumberAtom = atom<number>({
   key: "AiSourcingSceneNumberAtom",
   default: 0,
 });

@@ -1,22 +1,29 @@
+import { useEffect } from "react";
 import Typewriter from "typewriter-effect";
 
 import type { ChatMessage } from "@/models/chat";
 
 export function MessageView({
   message,
-  typewriter,
+  useTypewriter,
   onFinishTyping,
 }: {
   message: ChatMessage;
-  typewriter?: boolean;
+  useTypewriter?: boolean;
   onFinishTyping?: () => void;
-}): JSX.Element {
+}) {
+  useEffect(() => {
+    if (!useTypewriter) {
+      onFinishTyping?.();
+    }
+  }, [useTypewriter, onFinishTyping]);
   return (
     <div className="text-sm">
-      {typewriter ? (
+      {useTypewriter ? (
         <Typewriter
-          onInit={(tw) => {
-            tw.typeString(message.text)
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(message.text)
               .callFunction(() => onFinishTyping?.())
               .start();
           }}

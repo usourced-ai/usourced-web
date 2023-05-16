@@ -36,6 +36,6 @@ export const LongMessage: Story = {
 export const NoTypewriterEffect: Story = {
   args: {
     message: makeMessage("Hello, world! ".repeat(10), new Date()),
-    typewriter: false,
+    useTypewriter: false,
   },
 };

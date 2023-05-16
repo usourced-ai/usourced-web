@@ -16,20 +16,19 @@ export function useDemoScene(
   sceneNumberAtom: RecoilState<number>,
   scenes: DemoScene[]
 ) {
+  const chatState = useRecoilValue(chatStateAtom);
   const sceneNumber = useRecoilValue(sceneNumberAtom);
   const setSceneNumber = useSetRecoilState(sceneNumberAtom);
   const setChatState = useSetRecoilState(chatStateAtom);
 
   useEffect(() => {
-    const newScene = scenes[sceneNumber % scenes.length];
-    if (newScene) {
-      setChatState({
-        messages: newScene.messages,
-      });
-    }
+    const newScene = scenes[sceneNumber % scenes.length]!;
+    setChatState({
+      messages: newScene.messages,
+    });
   }, [sceneNumber, setChatState]);
 
-  const scene = scenes[sceneNumber % scenes.length];
+  const scene = scenes[sceneNumber % scenes.length]!;
   const incrementSceneNumber = (delta: number) => {
     setSceneNumber((prev) => {
       let newValue = prev + delta;
@@ -49,6 +48,7 @@ export function useDemoScene(
     }
   };
   return {
+    chatState,
     sceneNumber,
     scene,
     incrementSceneNumber,

@@ -1,15 +1,9 @@
-import { useRecoilValue } from "recoil";
-
 import { ChatInput } from "@/components/ai-sourcing/ChatInput";
 import { ChatMessageListView } from "@/components/common/chat/ChatMessageListView";
-import {
-  AiSourcingChatStateAtom,
-  useAiSourcingDemoScene,
-} from "@/models/demo-scenes/ai-sourcing-playbook";
+import { useAiSourcingDemoScene } from "@/models/demo-scenes/ai-sourcing-playbook";
 
 export function AIChatSlideout() {
-  const chatState = useRecoilValue(AiSourcingChatStateAtom);
-  const { advanceSceneWithResponse } = useAiSourcingDemoScene();
+  const { chatState, advanceSceneWithResponse } = useAiSourcingDemoScene();
   return (
     <div className="rounded-lg bg-white/50 shadow-xl backdrop-blur sm:mt-8 sm:w-full sm:p-4 sm:px-6">
       <div>
