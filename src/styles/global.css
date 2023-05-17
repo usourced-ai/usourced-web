@@ -5,3 +5,7 @@
 body {
   @apply antialiased;
 }
+
+.tooltip {
+  --tooltip-tail: 6px;
+}

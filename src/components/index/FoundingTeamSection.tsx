@@ -13,7 +13,7 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <div className="tooltip" data-tip="Click to view bio">
       <button
         type="button"
         className="text-center"
@@ -33,7 +33,7 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
         open={open}
         setOpen={setOpen}
       />
-    </>
+    </div>
   );
 }
 
