@@ -36,17 +36,28 @@ module.exports = {
       fontSize: {
         "2xs": "0.625rem",
       },
+      transitionDuration: {
+        fast: "300ms",
+      },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/forms")],
+  plugins: [
+    require("daisyui"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+  ],
   daisyui: {
-    styled: true,
-    themes: false,
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: "",
-    darkTheme: "dark",
+    themes: [
+      {
+        mytheme: {
+          primary: "#183439",
+          secondary: "#F7F7B6",
+          accent: "#F5CCB6",
+          neutral: "#262626",
+          "neutral-content": "#F8F6F3",
+          "base-100": "#F8F6F3",
+        },
+      },
+    ],
   },
 };
