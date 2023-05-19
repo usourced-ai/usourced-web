@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Link from "next/link";
 import { useState } from "react";
 
 import type { ProductCategory } from "@/api/product_categories";
@@ -15,14 +16,14 @@ function CategoryCard({ category }: { category: ProductCategory }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <a href={`/product/${category.id}`}>
+      <Link href={`/products/${category.id}`}>
         <img
           className="h-40 w-40"
           src={category.imageUrl}
           alt={category.name}
         />
         <div className="mt-2 text-brand">{category.name}</div>
-      </a>
+      </Link>
     </div>
   );
 }
