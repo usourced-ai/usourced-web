@@ -22,15 +22,15 @@ dependencies:
   daisyui:
     specifier: ^2.51.6
     version: 2.51.6(autoprefixer@10.4.14)(postcss@8.4.23)(ts-node@10.9.1)
+  dayjs:
+    specifier: ^1.11.7
+    version: 1.11.7
   firebase:
     specifier: ^9.22.0
     version: 9.22.0
   he:
     specifier: ^1.2.0
     version: 1.2.0
-  moment:
-    specifier: ^2.29.4
-    version: 2.29.4
   next:
     specifier: ^13.4.3
     version: 13.4.3(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
@@ -9893,7 +9893,6 @@ packages:
       {
         integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==,
       }
-    dev: true
 
   /debug@2.6.9:
     resolution:
@@ -16627,13 +16626,6 @@ packages:
       }
     engines: { node: ">=0.10.0" }
     dev: true
-
-  /moment@2.29.4:
-    resolution:
-      {
-        integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==,
-      }
-    dev: false
 
   /mri@1.2.0:
     resolution:

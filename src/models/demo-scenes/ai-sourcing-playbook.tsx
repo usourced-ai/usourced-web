@@ -1,4 +1,5 @@
-import moment from "moment";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import { FaFilePdf } from "react-icons/fa";
 import { atom } from "recoil";
 
@@ -7,6 +8,8 @@ import type { ChatMessage, ChatState } from "@/models/chat";
 import { AI_AGENT, CURRENT_USER } from "@/models/chat";
 import type { DemoScene } from "@/models/demo-scenes/demo-scene";
 import { useDemoScene } from "@/models/demo-scenes/demo-scene";
+
+dayjs.extend(localizedFormat);
 
 type SceneDelta = {
   message: ChatMessage;
@@ -23,7 +26,7 @@ function newMessage(
   return {
     id: Math.random().toString(),
     text,
-    createdAt: moment().toDate(),
+    createdAt: dayjs().toDate(),
     from: is_ai ? AI_AGENT : CURRENT_USER,
     payload,
   };
@@ -220,31 +223,31 @@ const sceneDeltas = [
         <h4 className="text-xl">Timeline Estimates</h4>
         <p>
           <span className="font-semibold">Sample placement date:</span>{" "}
-          {moment().add(1, "day").toDate().toLocaleDateString()}
+          {dayjs().add(1, "day").format("L")}
         </p>
         <p>
           <span className="font-semibold">Sample ready date:</span>{" "}
-          {moment().add(7, "day").toDate().toLocaleDateString()}
+          {dayjs().add(7, "day").format("L")}
         </p>
         <p>
           <span className="font-semibold">Bulk production placement date:</span>{" "}
-          {moment().add(8, "day").toDate().toLocaleDateString()}
+          {dayjs().add(8, "day").format("L")}
         </p>
         <p>
           <span className="font-semibold">Bulk production ready date:</span>{" "}
-          {moment().add(15, "day").toDate().toLocaleDateString()}
+          {dayjs().add(15, "day").format("L")}
         </p>
         <p>
           <span className="font-semibold">
             Express shipment receiving date (100 units):
           </span>{" "}
-          {moment().add(21, "day").toDate().toLocaleDateString()}
+          {dayjs().add(21, "day").format("L")}
         </p>
         <p>
           <span className="font-semibold">
             Standard shipment receiving date (900 units):
           </span>{" "}
-          {moment().add(35, "day").toDate().toLocaleDateString()}
+          {dayjs().add(35, "day").format("L")}
         </p>
         <h4 className="mt-2 text-xl">Total Order Cost</h4>
         <p>
@@ -261,31 +264,31 @@ const sceneDeltas = [
         <h3 className="mt-4 text-2xl">Timeline Estimates</h3>
         <p className="mt-1">
           <span className="font-semibold">Sample placement date:</span>{" "}
-          {moment().add(1, "day").toDate().toLocaleDateString()}
+          {dayjs().add(1, "day").format("L")}
         </p>
         <p className="mt-1">
           <span className="font-semibold">Sample ready date:</span>{" "}
-          {moment().add(7, "day").toDate().toLocaleDateString()}
+          {dayjs().add(7, "day").format("L")}
         </p>
         <p className="mt-1">
           <span className="font-semibold">Bulk production placement date:</span>{" "}
-          {moment().add(8, "day").toDate().toLocaleDateString()}
+          {dayjs().add(8, "day").format("L")}
         </p>
         <p className="mt-1">
           <span className="font-semibold">Bulk production ready date:</span>{" "}
-          {moment().add(15, "day").toDate().toLocaleDateString()}
+          {dayjs().add(15, "day").format("L")}
         </p>
         <p className="mt-1">
           <span className="font-semibold">
             Express shipment receiving date (100 units):
           </span>{" "}
-          {moment().add(21, "day").toDate().toLocaleDateString()}
+          {dayjs().add(21, "day").format("L")}
         </p>
         <p className="mt-1">
           <span className="font-semibold">
             Standard shipment receiving date (900 units):
           </span>{" "}
-          {moment().add(35, "day").toDate().toLocaleDateString()}
+          {dayjs().add(35, "day").format("L")}
         </p>
         <h3 className="mt-4 text-2xl">Total Order Price</h3>
         <p className="mt-1">
