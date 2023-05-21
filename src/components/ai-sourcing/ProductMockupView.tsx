@@ -12,7 +12,7 @@ function ProductMockupImageView({ url }: { url: string }) {
       <img
         key={url} // This forces a re-render when the url changes for animations
         src={url}
-        className="animate__animated animate__fadeIn h-full object-contain "
+        className="animate__animated animate__fadeIn h-full object-contain"
         alt="Mockup"
       />
     </div>
