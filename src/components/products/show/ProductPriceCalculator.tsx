@@ -5,8 +5,23 @@ import { useState } from "react";
 
 import { InputSlider } from "@/components/common/InputSlider";
 
+import type { PricingTier } from "./PriceQuoteTable";
+import { getPricePerItem } from "./PriceQuoteTable";
+
 dayjs.extend(localizedFormat);
 dayjs.extend(utc);
+
+function getTotalPrice(
+  quantity: number,
+  expressPercentage: number,
+  pricingTiers: PricingTier[]
+): number {
+  const EXPRESS_PRICE_PER_ITEM = 5;
+  const pricePerItem = getPricePerItem(quantity, pricingTiers);
+  const expressPrice =
+    (EXPRESS_PRICE_PER_ITEM * quantity * expressPercentage) / 100;
+  return pricePerItem * quantity + expressPrice;
+}
 
 function ShippingTable({
   quantity,
@@ -58,7 +73,11 @@ function ShippingTable({
   );
 }
 
-export function ProductPriceCalculator() {
+export function ProductPriceCalculator({
+  pricingTiers,
+}: {
+  pricingTiers: PricingTier[];
+}) {
   const [quantity, setQuantity] = useState<number>(100);
   const [expressPercentage, setExpressPercentage] = useState<number>(10);
   return (
@@ -86,7 +105,9 @@ export function ProductPriceCalculator() {
           expressPercentage={expressPercentage}
         />
       </div>
-      <h3 className="my-4 text-2xl font-medium text-gray-900">Total: $100</h3>
+      <h3 className="my-4 text-2xl font-medium text-gray-900">
+        Total: ${getTotalPrice(quantity, expressPercentage, pricingTiers)}
+      </h3>
     </div>
   );
 }

@@ -1,14 +1,16 @@
-import classNames from "classnames";
+import { useState } from "react";
 
 import { Button } from "@/components/common/Button";
 import { ButtonPicker } from "@/components/products/show/ButtonPicker";
 import { ColorPicker } from "@/components/products/show/ColorPicker";
 import { PriceQuoteTable } from "@/components/products/show/PriceQuoteTable";
 import { ProductBreadcrumbs } from "@/components/products/show/ProductBreadcrumbs";
+import { ProductCustomizer } from "@/components/products/show/ProductCustomizer";
 import { ProductPriceCalculator } from "@/components/products/show/ProductPriceCalculator";
 import { ProductReviews } from "@/components/products/show/ProductReviews";
 import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
+import { demoAlert } from "@/utils/demo-utils";
 
 const productName = "Cloud-Handle Ceramic Mug";
 
@@ -26,30 +28,39 @@ const product = {
       href: "/products/1",
     },
   ],
-  images: [
+  variants: [
     {
-      id: 1,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-featured-product-shot.jpg",
-      imageAlt: "Back of women's Basic Tee in black.",
-      primary: true,
+      color: "#9CAFC4",
+      imageUrl: "/images/demo/mugs/blue.JPG",
     },
     {
-      id: 2,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-01.jpg",
-      imageAlt: "Side profile of women's Basic Tee in black.",
-      primary: false,
+      color: "#EEE2C8",
+      imageUrl: "/images/demo/mugs/cream.JPG",
     },
     {
-      id: 3,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-02.jpg",
-      imageAlt: "Front of women's Basic Tee in black.",
-      primary: false,
+      color: "#DCD1A2",
+      imageUrl: "/images/demo/mugs/green.JPG",
+    },
+    {
+      color: "#E8C6C6",
+      imageUrl: "/images/demo/mugs/pink.JPG",
+    },
+    {
+      color: "#D3CBD6",
+      imageUrl: "/images/demo/mugs/purple.JPG",
+    },
+    {
+      color: "#EBD59A",
+      imageUrl: "/images/demo/mugs/yellow.JPG",
     },
   ],
-  colors: ["#9CAFC4", "#EEE2C8", "#DCD1A2", "#E8C6C6", "#D3CBD6", "#EBD59A"],
+  images: [
+    "/images/demo/mugs/actual/actual-01.jpg",
+    "/images/demo/mugs/actual/actual-02.jpg",
+    "/images/demo/mugs/actual/actual-03.jpg",
+    "/images/demo/mugs/actual/actual-04.jpg",
+    "/images/demo/mugs/actual/actual-05.jpg",
+  ],
   printEffects: [
     { name: "Silk Printing" },
     { name: "UV Printing" },
@@ -75,88 +86,125 @@ const product = {
   ],
 };
 
-export default function ProductShowPage() {
+function ProductSpecSection() {
   return (
-    <AppLayout meta={<Meta title="AI Product Sourcing" />} showDemoBar>
+    <div>
+      <h2 className="text-sm font-medium text-gray-900">+ Specs & Details</h2>
+      <div className="prose prose-sm mt-4 text-gray-500">
+        <p>
+          Introducing our Cloud-Handled Ceramic Mug in Pastel Colors &ndash; the
+          perfect addition to your morning routine or afternoon tea break! Made
+          with high-quality ceramic material and featuring a unique cloud-shaped
+          handle, this mug is both stylish and functional.
+        </p>
+        <p>
+          But that&rsquo;s not all &ndash; with our full 360-degree color print
+          customization option, you can make this mug truly your own. Choose
+          your favorite design or create your own, and we&rsquo;ll bring it to
+          life on your mug with vibrant, fade-resistant colors. And with our
+          pastel color options, your mug will be a soft and calming addition to
+          your collection.
+        </p>
+        <p>
+          Not only does this mug look great, but it&rsquo;s also practical. Its
+          generous 9.5-ounce size is perfect for your favorite hot or cold
+          beverage, and its ceramic material provides excellent insulation to
+          keep your drink at the perfect temperature for longer. Plus,
+          it&rsquo;s dishwasher and microwave safe, making it easy to clean and
+          use every day.
+        </p>
+        <p>
+          Upgrade your mug game with our Cloud-Handled Ceramic Mug in Pastel
+          Colors, fully customizable to fit your unique style and taste.
+        </p>
+        <ul>
+          <li>Material: Porcelain Ceramic</li>
+          <li>Size: 280ml/9.5 oz</li>
+          <li>Dimension: 4 inch (H) x 4.7 inch (W)</li>
+          <li>Weight: 500g</li>
+          <li>Care Instructions: Dishwasher & Microwave safe</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default function ProductShowPage() {
+  const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
+  const colors = product.variants.map((variant) => variant.color);
+  const onSelectColor = (color: string) => {
+    const variant = product.variants.find((v) => v.color === color);
+    setSelectedVariant(variant);
+  };
+
+  return (
+    <AppLayout meta={<Meta title={product.name} />} showDemoBar>
       <div className="pb-16 pt-6">
         <ProductBreadcrumbs breadcrumbs={product.breadcrumbs} />
         <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
-            <div className="lg:col-span-5 lg:col-start-8">
+          <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-8">
+            <div className="col-span-2">variants</div>
+            <div className="col-span-5">
+              <ProductCustomizer imageUrl={selectedVariant!.imageUrl} />
+              <div className="mt-8">
+                <ProductSpecSection />
+              </div>
+            </div>
+
+            {/* Product info */}
+            <div className="col-span-5">
               <div className="flex justify-between">
                 <h1 className="text-2xl font-medium text-gray-900">
                   {product.name}
                 </h1>
               </div>
               <ProductReviews rating={product.rating} />
-            </div>
-
-            {/* Image gallery */}
-            <div className="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
-              <h2 className="sr-only">Images</h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                {product.images.map((image) => (
-                  <img
-                    key={image.id}
-                    src={image.imageSrc}
-                    alt={image.imageAlt}
-                    className={classNames(
-                      image.primary
-                        ? "lg:col-span-2 lg:row-span-2"
-                        : "hidden lg:block",
-                      "rounded-lg"
-                    )}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-8 lg:col-span-5">
-              <form>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
-                <ColorPicker colors={product.colors} />
-
-                <h3 className="mt-8 text-sm font-medium text-gray-900">
-                  Print Effect
-                </h3>
-                <ButtonPicker selections={product.printEffects} />
-
-                <Button size="xl" className="mt-8 w-full">
-                  Customize Now
-                </Button>
-              </form>
-
               <div className="mt-8">
-                <ProductPriceCalculator />
-              </div>
+                <form>
+                  <h3 className="text-sm font-medium text-gray-900">Color</h3>
+                  <ColorPicker colors={colors} onSelect={onSelectColor} />
 
-              <div className="mt-8">
-                <h2 className="text-sm font-medium text-gray-900">
-                  Express Shipping
-                </h2>
-                <div className="prose prose-sm mt-4 text-gray-500">
-                  <p>
-                    We understand the importance of receiving your order
-                    quickly, which is why we offer partial express shipping.
-                    This means you&rsquo;ll receive a portion of your order
-                    sooner while saving on shipping costs for the remaining
-                    items.
-                  </p>
-                  <p>Turnaround time including production &amp; shipping:</p>
-                  <ul>
-                    <li>Express shipping: 2&ndash;3 weeks</li>
-                    <li>Standard shipping: 4&ndash;5 weeks</li>
-                  </ul>
+                  <h3 className="mt-8 text-sm font-medium text-gray-900">
+                    Print Effect
+                  </h3>
+                  <ButtonPicker selections={product.printEffects} />
+
+                  <Button size="xl" className="mt-8 w-full" onClick={demoAlert}>
+                    Customize Now
+                  </Button>
+                </form>
+
+                <div className="mt-8">
+                  <ProductPriceCalculator pricingTiers={product.pricingTiers} />
                 </div>
-              </div>
 
-              <div className="mt-8">
-                <h2 className="text-sm font-medium text-gray-900">
-                  Pricing Table
-                </h2>
-                <div className="mt-4 text-gray-700">
-                  <PriceQuoteTable pricingTiers={product.pricingTiers} />
+                <div className="mt-8">
+                  <h2 className="text-sm font-medium text-gray-900">
+                    Express Shipping
+                  </h2>
+                  <div className="prose prose-sm mt-4 text-gray-500">
+                    <p>
+                      We understand the importance of receiving your order
+                      quickly, which is why we offer partial express shipping.
+                      This means you&rsquo;ll receive a portion of your order
+                      sooner while saving on shipping costs for the remaining
+                      items.
+                    </p>
+                    <p>Turnaround time including production &amp; shipping:</p>
+                    <ul>
+                      <li>Express shipping: 2&ndash;3 weeks</li>
+                      <li>Standard shipping: 4&ndash;5 weeks</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h2 className="text-sm font-medium text-gray-900">
+                    Pricing Table
+                  </h2>
+                  <div className="mt-4 text-gray-700">
+                    <PriceQuoteTable pricingTiers={product.pricingTiers} />
+                  </div>
                 </div>
               </div>
             </div>
