@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { Button } from "@/components/common/Button";
-import { demoAlert } from "@/utils/demo_utils";
+import { demoAlert } from "@/utils/demo-utils";
 
 const NAVIGATION_LINKS = [
   { name: "Custom Request", href: "/custom-request" },
