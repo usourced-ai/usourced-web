@@ -2,6 +2,7 @@ import { render, waitFor } from "@testing-library/react";
 import type { ReactNode } from "react";
 
 import { Meta } from "@/layouts/Meta";
+import { AppConfig } from "@/utils/AppConfig";
 
 // Mock `next/head`: https://bradgarropy.com/blog/mocking-nextjs
 jest.mock(
@@ -20,7 +21,7 @@ describe("Meta component", () => {
       render(<Meta title={title} description="Random description" />);
 
       await waitFor(() => {
-        expect(document.title).toEqual(title);
+        expect(document.title).toEqual(`${title} | ${AppConfig.site_name}`);
       });
     });
   });
