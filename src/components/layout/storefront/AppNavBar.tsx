@@ -82,7 +82,7 @@ function MobileMenu({
   );
 }
 
-export function AppBar() {
+export function AppNavBar() {
   const router = useRouter();
   const navigationItems = NAVIGATION_LINKS.map((link) => ({
     ...link,

@@ -5,9 +5,10 @@ import { CatalogSection } from "@/components/index/CatalogSection";
 import { CustomSourcingSection } from "@/components/index/CustomSourcingSection";
 import { HeroSection } from "@/components/index/HeroSection";
 import { OurPromiseSection } from "@/components/index/OurPromiseSection";
-import { AppLayout } from "@/layouts/AppLayout";
+import { AppConfig } from "@/config/AppConfig";
 import { Meta } from "@/layouts/Meta";
-import { AppConfig } from "@/utils/AppConfig";
+import { StorefrontLayout } from "@/layouts/StorefrontLayout";
+import { useScrollRevealEffect } from "@/utils/animation-utils";
 
 const FoundingTeamSection = dynamic(() =>
   import("@/components/index/FoundingTeamSection").then(
@@ -16,8 +17,9 @@ const FoundingTeamSection = dynamic(() =>
 );
 
 export default function IndexPage() {
+  useScrollRevealEffect();
   return (
-    <AppLayout
+    <StorefrontLayout
       meta={
         <Meta title={AppConfig.title} description={AppConfig.description} />
       }
@@ -29,6 +31,6 @@ export default function IndexPage() {
       <OurPromiseSection />
       <CustomSourcingSection />
       <FoundingTeamSection />
-    </AppLayout>
+    </StorefrontLayout>
   );
 }

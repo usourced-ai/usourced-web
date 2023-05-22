@@ -3,8 +3,8 @@ import "@typeform/embed/build/css/widget.css";
 import { createWidget } from "@typeform/embed";
 import { useEffect, useRef } from "react";
 
-import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
+import { StorefrontLayout } from "@/layouts/StorefrontLayout";
 
 function useTypeformWidget(id: string) {
   const ref = useRef(null);
@@ -23,7 +23,7 @@ export default function CustomRequestIndexPage() {
   const newClientFormRef = useTypeformWidget("djEwoPSB");
   const customRequestFormRef = useTypeformWidget("GU8mFH90");
   return (
-    <AppLayout meta={<Meta title="White-Glove VIP Service" />}>
+    <StorefrontLayout meta={<Meta title="White-Glove VIP Service" />}>
       <section className="mx-auto max-w-screen-lg pt-12 sm:px-6 lg:px-8">
         <h1 className="font-brand text-3xl">White-Glove VIP Service</h1>
         <p className="mt-8">
@@ -55,6 +55,6 @@ export default function CustomRequestIndexPage() {
         </p>
         <div ref={customRequestFormRef} />
       </section>
-    </AppLayout>
+    </StorefrontLayout>
   );
 }

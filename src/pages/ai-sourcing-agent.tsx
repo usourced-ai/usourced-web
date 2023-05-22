@@ -3,8 +3,8 @@ import { useEffect } from "react";
 
 import { AIChatSlideout } from "@/components/ai-sourcing/AIChatSlideout";
 import { AIProductView } from "@/components/ai-sourcing/AIProductView";
-import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
+import { StorefrontLayout } from "@/layouts/StorefrontLayout";
 
 export default function AiSourcingAgentPage() {
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function AiSourcingAgentPage() {
     }, 1000);
   }, []);
   return (
-    <AppLayout meta={<Meta title="AI Product Sourcing" />} showDemoBar>
+    <StorefrontLayout meta={<Meta title="AI Product Sourcing" />} showDemoBar>
       <section
         className="bg-contain bg-bottom bg-no-repeat"
         style={{ backgroundImage: "url(/images/index/bg/about-bg.svg)" }}
@@ -36,6 +36,6 @@ export default function AiSourcingAgentPage() {
           </div>
         </div>
       </section>
-    </AppLayout>
+    </StorefrontLayout>
   );
 }

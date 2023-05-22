@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-import { AppBar } from "@/components/layout/AppBar";
-import { AppFooter } from "@/components/layout/AppFooter";
-import { DemoBanner } from "@/components/layout/DemoBanner";
+import { AppFooter } from "@/components/layout/storefront/AppFooter";
+import { AppNavBar } from "@/components/layout/storefront/AppNavBar";
+import { DemoBanner } from "@/components/layout/storefront/DemoBanner";
 
-export function AppLayout({
+export function StorefrontLayout({
   meta,
   children,
   showDemoBar,
@@ -16,7 +16,7 @@ export function AppLayout({
   return (
     <>
       {meta}
-      <AppBar />
+      <AppNavBar />
       {showDemoBar && <DemoBanner />}
       <main className="min-h-full bg-cream pb-20">{children}</main>
       <AppFooter />

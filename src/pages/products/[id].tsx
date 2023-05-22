@@ -9,8 +9,8 @@ import { ProductCustomizer } from "@/components/products/show/ProductCustomizer"
 import { ProductPriceCalculator } from "@/components/products/show/ProductPriceCalculator";
 import { ProductReviews } from "@/components/products/show/ProductReviews";
 import { ProductVariantGallery } from "@/components/products/show/ProductVariantGallery";
-import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
+import { StorefrontLayout } from "@/layouts/StorefrontLayout";
 import { demoAlert } from "@/utils/demo-utils";
 
 const productName = "Cloud-Handle Ceramic Mug";
@@ -167,7 +167,7 @@ export default function ProductShowPage() {
   };
 
   return (
-    <AppLayout meta={<Meta title={product.name} />} showDemoBar>
+    <StorefrontLayout meta={<Meta title={product.name} />} showDemoBar>
       <div className="pb-16 pt-6">
         <ProductBreadcrumbs breadcrumbs={product.breadcrumbs} />
         <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -210,6 +210,6 @@ export default function ProductShowPage() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </StorefrontLayout>
   );
 }
