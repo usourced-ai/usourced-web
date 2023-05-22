@@ -8,6 +8,7 @@ import { ProductBreadcrumbs } from "@/components/products/show/ProductBreadcrumb
 import { ProductCustomizer } from "@/components/products/show/ProductCustomizer";
 import { ProductPriceCalculator } from "@/components/products/show/ProductPriceCalculator";
 import { ProductReviews } from "@/components/products/show/ProductReviews";
+import { ProductVariantGallery } from "@/components/products/show/ProductVariantGallery";
 import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
 import { demoAlert } from "@/utils/demo-utils";
@@ -54,7 +55,7 @@ const product = {
       imageUrl: "/images/demo/mugs/yellow.JPG",
     },
   ],
-  images: [
+  imageUrls: [
     "/images/demo/mugs/actual/actual-01.jpg",
     "/images/demo/mugs/actual/actual-02.jpg",
     "/images/demo/mugs/actual/actual-03.jpg",
@@ -129,6 +130,34 @@ function ProductSpecSection() {
   );
 }
 
+function ProductPricingSection() {
+  return (
+    <div>
+      <ProductPriceCalculator pricingTiers={product.pricingTiers} />
+      <h2 className="mt-8 text-sm font-medium text-gray-900">
+        Express Shipping
+      </h2>
+      <div className="prose prose-sm mt-4 text-gray-500">
+        <p>
+          We understand the importance of receiving your order quickly, which is
+          why we offer partial express shipping. This means you&rsquo;ll receive
+          a portion of your order sooner while saving on shipping costs for the
+          remaining items.
+        </p>
+        <p>Turnaround time including production &amp; shipping:</p>
+        <ul>
+          <li>Express shipping: 2&ndash;3 weeks</li>
+          <li>Standard shipping: 4&ndash;5 weeks</li>
+        </ul>
+      </div>
+      <h2 className="mt-8 text-sm font-medium text-gray-900">Pricing Table</h2>
+      <div className="mt-4 text-gray-700">
+        <PriceQuoteTable pricingTiers={product.pricingTiers} />
+      </div>
+    </div>
+  );
+}
+
 export default function ProductShowPage() {
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
   const colors = product.variants.map((variant) => variant.color);
@@ -143,7 +172,9 @@ export default function ProductShowPage() {
         <ProductBreadcrumbs breadcrumbs={product.breadcrumbs} />
         <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-8">
-            <div className="col-span-2">variants</div>
+            <div className="col-span-2">
+              <ProductVariantGallery imageUrls={product.imageUrls} />
+            </div>
             <div className="col-span-5">
               <ProductCustomizer imageUrl={selectedVariant!.imageUrl} />
               <div className="mt-8">
@@ -151,7 +182,6 @@ export default function ProductShowPage() {
               </div>
             </div>
 
-            {/* Product info */}
             <div className="col-span-5">
               <div className="flex justify-between">
                 <h1 className="text-2xl font-medium text-gray-900">
@@ -159,53 +189,22 @@ export default function ProductShowPage() {
                 </h1>
               </div>
               <ProductReviews rating={product.rating} />
+              <div className="mt-4">
+                <h3 className="text-sm font-medium text-gray-900">Color</h3>
+                <ColorPicker colors={colors} onSelect={onSelectColor} />
+
+                <h3 className="mt-8 text-sm font-medium text-gray-900">
+                  Print Effect
+                </h3>
+                <ButtonPicker selections={product.printEffects} />
+
+                <Button size="xl" className="mt-8 w-full" onClick={demoAlert}>
+                  Customize Now
+                </Button>
+              </div>
+
               <div className="mt-8">
-                <form>
-                  <h3 className="text-sm font-medium text-gray-900">Color</h3>
-                  <ColorPicker colors={colors} onSelect={onSelectColor} />
-
-                  <h3 className="mt-8 text-sm font-medium text-gray-900">
-                    Print Effect
-                  </h3>
-                  <ButtonPicker selections={product.printEffects} />
-
-                  <Button size="xl" className="mt-8 w-full" onClick={demoAlert}>
-                    Customize Now
-                  </Button>
-                </form>
-
-                <div className="mt-8">
-                  <ProductPriceCalculator pricingTiers={product.pricingTiers} />
-                </div>
-
-                <div className="mt-8">
-                  <h2 className="text-sm font-medium text-gray-900">
-                    Express Shipping
-                  </h2>
-                  <div className="prose prose-sm mt-4 text-gray-500">
-                    <p>
-                      We understand the importance of receiving your order
-                      quickly, which is why we offer partial express shipping.
-                      This means you&rsquo;ll receive a portion of your order
-                      sooner while saving on shipping costs for the remaining
-                      items.
-                    </p>
-                    <p>Turnaround time including production &amp; shipping:</p>
-                    <ul>
-                      <li>Express shipping: 2&ndash;3 weeks</li>
-                      <li>Standard shipping: 4&ndash;5 weeks</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <h2 className="text-sm font-medium text-gray-900">
-                    Pricing Table
-                  </h2>
-                  <div className="mt-4 text-gray-700">
-                    <PriceQuoteTable pricingTiers={product.pricingTiers} />
-                  </div>
-                </div>
+                <ProductPricingSection />
               </div>
             </div>
           </div>
