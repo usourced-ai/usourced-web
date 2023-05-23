@@ -41,6 +41,14 @@ export const Outlined: Story = {
   render,
 };
 
+export const GrayOutlined: Story = {
+  args: {
+    color: "gray",
+    variant: "outlined",
+  },
+  render,
+};
+
 export const Small: Story = {
   args: {
     size: "sm",

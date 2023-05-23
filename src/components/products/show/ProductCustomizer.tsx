@@ -23,16 +23,20 @@ export function ProductCustomizer({ imageUrl }: { imageUrl: string }) {
           </button>
         </div>
         <Button
-          className="absolute left-4 top-[420px]"
+          className="absolute left-4 top-[440px]"
+          color="gray"
+          size="sm"
           variant="outlined"
           onClick={demoAlert}
         >
           Add text
         </Button>
         <Button
-          className="absolute left-24 top-[420px]"
-          onClick={demoAlert}
+          className="absolute left-24 top-[440px]"
+          color="gray"
+          size="sm"
           variant="outlined"
+          onClick={demoAlert}
         >
           Upload logo
         </Button>
