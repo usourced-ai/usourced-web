@@ -93,7 +93,7 @@ function ProductSpecSection() {
       <h2 className="text-sm font-medium text-gray-900">+ Specs & Details</h2>
       <div className="prose prose-sm mt-4 text-gray-500">
         <p>
-          Introducing our Cloud-Handled Ceramic Mug in Pastel Colors &ndash; the
+          Introducing our Cloud-Handled Ceramic Mug in pastel colors &ndash; the
           perfect addition to your morning routine or afternoon tea break! Made
           with high-quality ceramic material and featuring a unique cloud-shaped
           handle, this mug is both stylish and functional.
