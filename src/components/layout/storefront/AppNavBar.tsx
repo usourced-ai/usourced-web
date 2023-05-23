@@ -97,7 +97,7 @@ export function AppNavBar() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "border-brand text-gray-900 hover:border-teal-800 hover:text-teal-800"
+                      ? "text-gray-900 hover:border-teal-800 hover:text-teal-800"
                       : "border-transparent text-gray-600 hover:border-gray-300 hover:text-gray-700",
                     "inline-flex items-center border-b-2 px-1 pt-1 text-md font-medium"
                   )}
