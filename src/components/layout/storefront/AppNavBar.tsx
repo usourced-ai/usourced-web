@@ -10,9 +10,12 @@ import { Masthead } from "../Masthead";
 
 const NAVIGATION_LINKS = [
   { name: "Custom Request", href: "/custom-request" },
-  { name: "Catalog Products", href: "/products/1" },
-  { name: "AI Sourcing Agent", href: "/ai-sourcing-agent" },
-  { name: "Project Dashboard", href: "/me/projects" },
+  { name: "Catalog Product Demo", href: "/products/1" },
+  { name: "AI Sourcing Agent Demo", href: "/ai-sourcing-agent" },
+  {
+    name: "Project Dashboard Demo",
+    href: "https://usourced-platform.web.app/projects-dashboard",
+  },
 ];
 
 type NavigationItem = {
