@@ -12,6 +12,6 @@ type Story = StoryObj<typeof ProductCustomizer>;
 
 export const Default: Story = {
   args: {
-    imageUrl: "http://localhost:3000/images/demo/mugs/blue.JPG",
+    imageUrl: "/images/demo/mugs/blue.JPG",
   },
 };

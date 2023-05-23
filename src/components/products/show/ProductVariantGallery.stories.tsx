@@ -13,11 +13,11 @@ type Story = StoryObj<typeof ProductVariantGallery>;
 export const Default: Story = {
   args: {
     imageUrls: [
-      "http://localhost:3000/images/demo/mugs/actual/actual-01.jpg",
-      "http://localhost:3000/images/demo/mugs/actual/actual-02.jpg",
-      "http://localhost:3000/images/demo/mugs/actual/actual-03.jpg",
-      "http://localhost:3000/images/demo/mugs/actual/actual-04.jpg",
-      "http://localhost:3000/images/demo/mugs/actual/actual-05.jpg",
+      "/images/demo/mugs/actual/actual-01.jpg",
+      "/images/demo/mugs/actual/actual-02.jpg",
+      "/images/demo/mugs/actual/actual-03.jpg",
+      "/images/demo/mugs/actual/actual-04.jpg",
+      "/images/demo/mugs/actual/actual-05.jpg",
     ],
   },
 };

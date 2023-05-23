@@ -1,11 +1,12 @@
 import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { Button } from "@/components/common/Button";
 import { demoAlert } from "@/utils/demo-utils";
+
+import { Masthead } from "../Masthead";
 
 const NAVIGATION_LINKS = [
   { name: "Custom Request", href: "/custom-request" },
@@ -19,18 +20,6 @@ type NavigationItem = {
   href: string;
   current: boolean;
 };
-
-function Masthead() {
-  return (
-    <Link href="/">
-      <img
-        className="block h-14 w-auto"
-        src="/images/nav/usourced-masthead.png"
-        alt="USourced"
-      />
-    </Link>
-  );
-}
 
 function SignInButton() {
   return (
@@ -95,7 +84,7 @@ export function AppNavBar() {
           <div className="flex h-24 justify-between">
             <div className="flex">
               <div className="flex shrink-0 items-center">
-                <Masthead />
+                <Masthead className="h-14" />
               </div>
             </div>
             <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">

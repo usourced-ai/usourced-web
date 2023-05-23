@@ -7,15 +7,13 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
+  staticDirs: ["../public"],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
   docs: {
     autodocs: "tag",
-  },
-  core: {
-    disableTelemetry: true,
   },
 };
 
