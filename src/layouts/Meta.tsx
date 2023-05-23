@@ -52,6 +52,11 @@ export function Meta(props: IMetaProps) {
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          images: [
+            {
+              url: "/images/seo/usourced-social-banner.png",
+            },
+          ],
         }}
       />
     </>
