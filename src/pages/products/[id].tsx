@@ -171,18 +171,17 @@ export default function ProductShowPage() {
       <div className="pb-16 pt-6">
         <ProductBreadcrumbs breadcrumbs={product.breadcrumbs} />
         <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-8">
-            <div className="col-span-2">
+          <div className="grid lg:grid-cols-12 lg:items-start lg:gap-8">
+            <div className="order-3 col-span-2 mt-8 lg:order-1 lg:mt-0">
               <ProductVariantGallery imageUrls={product.imageUrls} />
             </div>
-            <div className="col-span-5">
+            <div className="order-2 col-span-5 mt-8 lg:order-2 lg:mt-0">
               <ProductCustomizer imageUrl={selectedVariant!.imageUrl} />
               <div className="mt-8">
                 <ProductSpecSection />
               </div>
             </div>
-
-            <div className="col-span-5">
+            <div className="order-1 col-span-5 lg:order-3">
               <div className="flex justify-between">
                 <h1 className="text-2xl font-medium text-gray-900">
                   {product.name}
