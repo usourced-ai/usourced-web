@@ -1,3 +1,5 @@
+import type { NextRouter } from "next/router";
+import { useRouter } from "next/router";
 import {
   FaClipboard,
   FaCog,
@@ -13,24 +15,46 @@ import type { NavigationItem } from "./SidebarNavigationItem";
 import { SidebarNavigationItem } from "./SidebarNavigationItem";
 
 const navigation: NavigationItem[] = [
-  { name: "Dashboard", href: "#", icon: FaHome, current: true },
+  { name: "Dashboard", href: "#", icon: FaHome },
   {
     name: "Projects",
-    href: "#",
+    href: "/my/projects",
     icon: FaClipboard,
-    children: [
-      { name: "GraphQL API", href: "#", current: false },
-      { name: "iOS App", href: "#", current: false },
-      { name: "Android App", href: "#", current: false },
-      { name: "New Customer Portal", href: "#", current: false },
-    ],
   },
   { name: "Tasks", href: "#", icon: FaListUl, badge: "3" },
-  { name: "Orders", href: "#", icon: FaFileAlt },
+  {
+    name: "Orders",
+    href: "#",
+    icon: FaFileAlt,
+    children: [
+      { name: "Sample Orders", href: "#", current: false },
+      { name: "Production Orders", href: "#", current: false },
+    ],
+  },
   { name: "Shipments", href: "#", icon: FaShippingFast },
 ];
+const settingsItem = { name: "Settings", href: "#", icon: FaCog };
+
+function markCurrentNavigationItem(
+  router: NextRouter,
+  item: NavigationItem
+): NavigationItem {
+  if (item.href === router.pathname) {
+    return { ...item, current: true };
+  }
+  if (item.children) {
+    return {
+      ...item,
+      children: item.children.map((child) =>
+        markCurrentNavigationItem(router, child)
+      ),
+    };
+  }
+  return item;
+}
 
 export function Sidebar() {
+  const router = useRouter();
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 px-6">
       <div className="h-16 shrink-0 pt-4">
@@ -42,14 +66,16 @@ export function Sidebar() {
             <ul className="-mx-2 space-y-1">
               {navigation.map((item) => (
                 <li key={item.name}>
-                  <SidebarNavigationItem item={item} />
+                  <SidebarNavigationItem
+                    item={markCurrentNavigationItem(router, item)}
+                  />
                 </li>
               ))}
             </ul>
           </li>
           <li className="-mx-2 mb-4 mt-auto">
             <SidebarNavigationItem
-              item={{ name: "Settings", href: "#", icon: FaCog }}
+              item={markCurrentNavigationItem(router, settingsItem)}
             />
           </li>
         </ul>
