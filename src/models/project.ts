@@ -1,3 +1,5 @@
+import type { Order } from "@/models/order";
+
 export enum ProjectPhase {
   Quoting = "Quoting",
   Sample = "Sample",
@@ -8,8 +10,9 @@ export enum ProjectPhase {
 export type Project = {
   id: string;
   name: string;
+  createdAt: Date;
   imageUrl?: string;
   phase: ProjectPhase;
   pendingTaskCount: number;
-  createdAt: Date;
+  orders: Order[];
 };

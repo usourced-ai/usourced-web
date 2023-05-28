@@ -22,12 +22,9 @@ export function ProjectStatusBadge({ project }: { project: Project }) {
             }
       )}
     >
-      {project.phase}
-      {project.pendingTaskCount > 0 && (
-        <span className="ml-1">
-          ({pluralize("task", project.pendingTaskCount, true)})
-        </span>
-      )}
+      {project.pendingTaskCount > 0
+        ? `${pluralize("task", project.pendingTaskCount, true)} pending`
+        : project.phase}
     </span>
   );
 }

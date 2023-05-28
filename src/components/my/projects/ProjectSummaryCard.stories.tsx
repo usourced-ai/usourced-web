@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ProjectPhase } from "@/models/project";
+import { projectsInQuoting, projectsInSampling } from "@/api/projects";
 
 import { ProjectSummaryCard } from "./ProjectSummaryCard";
 
@@ -14,13 +14,12 @@ type Story = StoryObj<typeof ProjectSummaryCard>;
 
 export const Default: Story = {
   args: {
-    project: {
-      id: "1",
-      name: "Beige Baseball Cap",
-      imageUrl: "/images/demo/projects/Beige Baseball Cap.png",
-      phase: ProjectPhase.Quoting,
-      pendingTaskCount: 3,
-      createdAt: new Date(),
-    },
+    project: projectsInQuoting[0],
+  },
+};
+
+export const WithOrders: Story = {
+  args: {
+    project: projectsInSampling[0],
   },
 };
