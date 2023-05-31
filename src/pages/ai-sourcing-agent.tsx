@@ -8,16 +8,13 @@ import { StorefrontLayout } from "@/layouts/StorefrontLayout";
 
 export default function AiSourcingAgentPage() {
   useEffect(() => {
-    setTimeout(() => {
-      enqueueSnackbar(
-        "To see the AI Sourcing Agent in action, simply press send message button.",
-        {
-          autoHideDuration: 30000,
-          key: "ai-sourcing-agent-demo",
-          className: "text-xl",
-        }
-      );
-    }, 1000);
+    enqueueSnackbar(
+      "To see the AI Sourcing Agent in action, simply press send message button.",
+      {
+        autoHideDuration: 30000,
+        className: "text-xl",
+      }
+    );
   }, []);
   return (
     <StorefrontLayout meta={<Meta title="AI Product Sourcing" />} showDemoBar>
