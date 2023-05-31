@@ -94,17 +94,18 @@ export function useResponsiveSidebar(): {
   sidebar: JSX.Element;
 } {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const sidebar = (
+    <>
+      <CollapsableSidebar
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+      <DesktopSidebar />
+    </>
+  );
   return {
     sidebarOpen,
     setSidebarOpen,
-    sidebar: (
-      <>
-        <CollapsableSidebar
-          sidebarOpen={sidebarOpen}
-          setSidebarOpen={setSidebarOpen}
-        />
-        <DesktopSidebar />
-      </>
-    ),
+    sidebar,
   };
 }
