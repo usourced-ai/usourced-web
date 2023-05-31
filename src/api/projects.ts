@@ -83,18 +83,18 @@ export const projectsInSampling: Project[] = [
     imageUrl: "/images/demo/projects/Green Desk Fan.png",
     orders: [
       {
-        id: "6-0",
-        name: "Sample #1",
-        createdAt: new Date("2022-11-01"),
-        type: OrderType.Sample,
-        status: OrderStatus.Delivered,
-      },
-      {
         id: "6-1",
         name: "Sample #2",
         createdAt: new Date("2022-11-01"),
         type: OrderType.Sample,
         status: OrderStatus.Draft,
+      },
+      {
+        id: "6-0",
+        name: "Sample #1",
+        createdAt: new Date("2022-11-01"),
+        type: OrderType.Sample,
+        status: OrderStatus.Delivered,
       },
     ],
   },
@@ -159,7 +159,22 @@ export const projectsInProduction: Project[] = [
     phase: ProjectPhase.Production,
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Pink Fabric Pen Pouch.png",
-    orders: [],
+    orders: [
+      {
+        id: "10-0",
+        name: "Production #1",
+        createdAt: new Date("2022-12-10"),
+        type: OrderType.Production,
+        status: OrderStatus.Draft,
+      },
+      {
+        id: "10-1",
+        name: "Sample #1",
+        createdAt: new Date("2022-12-05"),
+        type: OrderType.Sample,
+        status: OrderStatus.Delivered,
+      },
+    ],
   },
   {
     id: "11",
@@ -168,7 +183,22 @@ export const projectsInProduction: Project[] = [
     phase: ProjectPhase.Production,
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Rose Gold Pen.png",
-    orders: [],
+    orders: [
+      {
+        id: "11-0",
+        name: "Production #1",
+        createdAt: new Date("2022-12-10"),
+        type: OrderType.Production,
+        status: OrderStatus.PendingProduction,
+      },
+      {
+        id: "11-1",
+        name: "Sample #1",
+        createdAt: new Date("2022-12-05"),
+        type: OrderType.Sample,
+        status: OrderStatus.Delivered,
+      },
+    ],
   },
   {
     id: "12",
@@ -177,7 +207,22 @@ export const projectsInProduction: Project[] = [
     phase: ProjectPhase.Production,
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Sapphire Blue Candle.png",
-    orders: [],
+    orders: [
+      {
+        id: "12-0",
+        name: "Production #1",
+        createdAt: new Date("2023-01-10"),
+        type: OrderType.Production,
+        status: OrderStatus.InProduction,
+      },
+      {
+        id: "12-1",
+        name: "Sample #1",
+        createdAt: new Date("2023-01-05"),
+        type: OrderType.Sample,
+        status: OrderStatus.Delivered,
+      },
+    ],
   },
   {
     id: "13",
@@ -186,7 +231,22 @@ export const projectsInProduction: Project[] = [
     phase: ProjectPhase.Production,
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Teal Blue USB Charger Keychain.png",
-    orders: [],
+    orders: [
+      {
+        id: "13-0",
+        name: "Production #1",
+        createdAt: new Date("2023-01-10"),
+        type: OrderType.Production,
+        status: OrderStatus.Shipping,
+      },
+      {
+        id: "13-1",
+        name: "Sample #1",
+        createdAt: new Date("2023-01-05"),
+        type: OrderType.Sample,
+        status: OrderStatus.Delivered,
+      },
+    ],
   },
   {
     id: "14",
@@ -196,6 +256,21 @@ export const projectsInProduction: Project[] = [
     pendingTaskCount: 0,
     imageUrl:
       "/images/demo/projects/White V-Neck T-Shirt with Embroidered Flowers.png",
-    orders: [],
+    orders: [
+      {
+        id: "14-0",
+        name: "Production #1",
+        createdAt: new Date("2023-01-10"),
+        type: OrderType.Production,
+        status: OrderStatus.Shipping,
+      },
+      {
+        id: "14-1",
+        name: "Sample #1",
+        createdAt: new Date("2023-01-05"),
+        type: OrderType.Sample,
+        status: OrderStatus.Delivered,
+      },
+    ],
   },
 ];

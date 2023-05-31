@@ -36,9 +36,7 @@ export function ProjectSummaryCard({ project }: { project: Project }) {
             <li className="mt-3 text-sm text-gray-500">No orders yet</li>
           ) : (
             <li>
-              <div className="mx-auto mt-4 h-px w-full bg-gray-200" />
-              <div className="my-2 text-sm text-gray-500">Orders</div>
-              <ul className="space-y-2">
+              <ul className="mt-4 space-y-2">
                 {project.orders.map((order) => (
                   <li key={order.id} className="mx-auto">
                     <OrderBadge order={order} />
