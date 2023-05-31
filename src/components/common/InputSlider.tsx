@@ -30,7 +30,6 @@ export function InputSlider({
           min={minValue ?? 0}
           max={maxValue}
           step={step}
-          className="range range-primary cursor-pointer"
           value={value}
           onChange={(e) => handleValueChange(Number(e.target.value))}
         />
