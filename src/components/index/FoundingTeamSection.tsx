@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { FOUNDING_TEAM_MEMBERS, type MemberProfile } from "@/api/founding_team";
+import { Tooltip } from "@/components/common/Tooltip";
 import TeamMemberProfileSlideout from "@/components/index/TeamMemberProfileSlideout";
 import { useFirestoreImage } from "@/utils/firebase";
 
@@ -13,27 +14,29 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="tooltip" data-tip="Click to view bio">
-      <button
-        type="button"
-        className="text-center"
-        onClick={() => setOpen(true)}
-      >
-        <img
-          src={image ?? DEFAULT_PROFILE_IMAGE_URL}
-          alt={member.name}
-          className="mx-auto h-40 w-40 rounded-full"
-        />
-        <h5 className="mt-2">{member.name}</h5>
-        <p className="text-sm text-gray-500">{member.title}</p>
-      </button>
+    <>
+      <Tooltip tooltip="Click to view bio">
+        <button
+          type="button"
+          className="text-center"
+          onClick={() => setOpen(true)}
+        >
+          <img
+            src={image ?? DEFAULT_PROFILE_IMAGE_URL}
+            alt={member.name}
+            className="mx-auto h-40 w-40 rounded-full"
+          />
+          <h5 className="mt-2">{member.name}</h5>
+          <p className="text-sm text-gray-500">{member.title}</p>
+        </button>
+      </Tooltip>
       <TeamMemberProfileSlideout
         member={member}
         memberImageUrl={image ?? DEFAULT_PROFILE_IMAGE_URL}
         open={open}
         setOpen={setOpen}
       />
-    </div>
+    </>
   );
 }
 
