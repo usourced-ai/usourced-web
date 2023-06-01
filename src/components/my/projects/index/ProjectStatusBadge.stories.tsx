@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { projectsInQuoting } from "@/api/projects";
+import { projects } from "@/api/projects";
 import { ProjectPhase } from "@/models/project";
 
 import { ProjectStatusBadge } from "./ProjectStatusBadge";
@@ -13,7 +13,7 @@ const meta: Meta<typeof ProjectStatusBadge> = {
 export default meta;
 type Story = StoryObj<typeof ProjectStatusBadge>;
 
-const testProject = projectsInQuoting[0]!;
+const testProject = projects["0"]!;
 
 export const Default: Story = {
   args: {
