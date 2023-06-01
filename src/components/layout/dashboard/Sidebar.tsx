@@ -2,7 +2,6 @@ import type { NextRouter } from "next/router";
 import { useRouter } from "next/router";
 import {
   FaClipboard,
-  FaCog,
   FaFileAlt,
   FaHome,
   FaListUl,
@@ -12,6 +11,8 @@ import {
 import type { NavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
 import { SidebarNavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
 import { Masthead } from "@/components/layout/Masthead";
+
+import { SidebarUserMenu } from "./SidebarUserMenu";
 
 const navigation: NavigationItem[] = [
   { name: "Dashboard", href: "#", icon: FaHome },
@@ -37,7 +38,6 @@ const navigation: NavigationItem[] = [
   },
   { name: "Shipments", href: "#", icon: FaShippingFast },
 ];
-const settingsItem = { name: "Settings", href: "#", icon: FaCog };
 
 function markCurrentNavigationItem(
   router: NextRouter,
@@ -77,10 +77,8 @@ export function Sidebar() {
               ))}
             </ul>
           </li>
-          <li className="-mx-2 mb-4 mt-auto">
-            <SidebarNavigationItem
-              item={markCurrentNavigationItem(router, settingsItem)}
-            />
+          <li className="mb-6 mt-auto">
+            <SidebarUserMenu />
           </li>
         </ul>
       </nav>
