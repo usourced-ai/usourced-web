@@ -9,10 +9,9 @@ import {
   FaShippingFast,
 } from "react-icons/fa";
 
+import type { NavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
+import { SidebarNavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
 import { Masthead } from "@/components/layout/Masthead";
-
-import type { NavigationItem } from "./SidebarNavigationItem";
-import { SidebarNavigationItem } from "./SidebarNavigationItem";
 
 const navigation: NavigationItem[] = [
   { name: "Dashboard", href: "#", icon: FaHome },
@@ -20,6 +19,11 @@ const navigation: NavigationItem[] = [
     name: "Projects",
     href: "/my/projects",
     icon: FaClipboard,
+    children: [
+      { name: "Grid View", href: "/my/projects/grid" },
+      { name: "List View", href: "/my/projects/list" },
+      { name: "Calendar View", href: "/my/projects/calendar" },
+    ],
   },
   { name: "Tasks", href: "#", icon: FaListUl, badge: "3" },
   {
@@ -27,8 +31,8 @@ const navigation: NavigationItem[] = [
     href: "#",
     icon: FaFileAlt,
     children: [
-      { name: "Sample Orders", href: "#", current: false },
-      { name: "Production Orders", href: "#", current: false },
+      { name: "Sample Orders", href: "#" },
+      { name: "Production Orders", href: "#" },
     ],
   },
   { name: "Shipments", href: "#", icon: FaShippingFast },

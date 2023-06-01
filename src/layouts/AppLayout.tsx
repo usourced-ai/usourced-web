@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { SecondaryNavBar } from "@/components/layout/dashboard/SecondaryNavBar";
+import { MobileNavBar } from "@/components/layout/dashboard/MobileNavBar";
 import { useResponsiveSidebar } from "@/components/layout/dashboard/useResponsiveSidebar";
 
 export function AppLayout({
@@ -15,7 +15,7 @@ export function AppLayout({
     <>
       {meta}
       {sidebar}
-      <SecondaryNavBar setSidebarOpen={setSidebarOpen} />
+      <MobileNavBar setSidebarOpen={setSidebarOpen} />
       <main className="h-full lg:ml-72">{children}</main>
     </>
   );

@@ -1,9 +1,8 @@
 import { FaExpandArrowsAlt, FaFeatherAlt } from "react-icons/fa";
 
+import { OrderBadge } from "@/components/my/orders/OrderBadge";
+import { ProjectStatusBadge } from "@/components/my/projects/index/ProjectStatusBadge";
 import type { Project } from "@/models/project";
-
-import { OrderBadge } from "../orders/OrderBadge";
-import { ProjectStatusBadge } from "./ProjectStatusBadge";
 
 function ProjectImageView({ project }: { project: Project }) {
   return project.imageUrl ? (

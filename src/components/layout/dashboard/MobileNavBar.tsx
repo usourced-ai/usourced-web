@@ -4,7 +4,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
-import { UserMenu } from "./UserMenu";
+import { UserMenu } from "@/components/layout/dashboard/UserMenu";
 
 function MobileMenuButton({
   setSidebarOpen,
@@ -53,13 +53,13 @@ function NotificationButton() {
   );
 }
 
-export function SecondaryNavBar({
+export function MobileNavBar({
   setSidebarOpen,
 }: {
   setSidebarOpen?: (open: boolean) => void;
 }) {
   return (
-    <div className="lg:ml-72">
+    <div className="lg:hidden">
       <div className="sticky top-0 z-40 lg:mx-auto lg:max-w-7xl lg:px-8">
         <div className="flex h-16 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-0 lg:shadow-none">
           <MobileMenuButton setSidebarOpen={setSidebarOpen} />

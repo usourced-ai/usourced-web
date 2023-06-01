@@ -4,9 +4,8 @@ import utc from "dayjs/plugin/utc";
 import { useState } from "react";
 
 import { InputSlider } from "@/components/common/InputSlider";
-
-import type { PricingTier } from "./PriceQuoteTable";
-import { getPricePerItem } from "./PriceQuoteTable";
+import type { PricingTier } from "@/components/products/show/PriceQuoteTable";
+import { getPricePerItem } from "@/components/products/show/PriceQuoteTable";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(utc);

@@ -1,6 +1,5 @@
+import { ProjectSummaryCard } from "@/components/my/projects/index/ProjectSummaryCard";
 import type { Project } from "@/models/project";
-
-import { ProjectSummaryCard } from "./ProjectSummaryCard";
 
 function ProjectList({ projects }: { projects: Project[] }) {
   return (

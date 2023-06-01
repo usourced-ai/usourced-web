@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment, useState } from "react";
 
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "@/components/layout/dashboard/Sidebar";
 
 function CollapsableSidebar({
   sidebarOpen,
@@ -15,7 +15,7 @@ function CollapsableSidebar({
     <Transition.Root show={sidebarOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-50 xl:hidden"
+        className="relative z-50 lg:hidden"
         onClose={setSidebarOpen}
       >
         <Transition.Child
@@ -75,7 +75,7 @@ function CollapsableSidebar({
 
 function DesktopSidebar() {
   return (
-    <div className="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col">
+    <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       <Sidebar />
     </div>
   );
