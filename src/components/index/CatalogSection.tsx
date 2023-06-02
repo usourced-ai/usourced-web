@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ function CategoryCard({ category }: { category: ProductCategory }) {
   return (
     <div
       key={category.id}
-      className={classNames("flex flex-col items-center", {
+      className={clsx("flex flex-col items-center", {
         "animate__animated animate__swing": hovered,
       })}
       onMouseEnter={() => setHovered(true)}

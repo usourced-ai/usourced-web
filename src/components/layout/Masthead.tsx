@@ -1,11 +1,11 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 
 export function Masthead({ className }: { className?: string }) {
   return (
     <Link href="/">
       <img
-        className={classNames("w-auto", className)}
+        className={clsx("w-auto", className)}
         src="/images/nav/usourced-masthead.png"
         alt="USourced"
       />

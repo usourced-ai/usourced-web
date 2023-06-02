@@ -1,5 +1,5 @@
 import { RadioGroup } from "@headlessui/react";
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 
 export type ButtonPickerSelection = {
@@ -31,8 +31,8 @@ export function ButtonPicker({
             key={selection.value ?? selection.name}
             value={selection.name}
             className={({ active, checked }) =>
-              classNames(
-                "flex items-center justify-center rounded-full border transition py-2 px-3 text-sm font-medium sm:flex-1",
+              clsx(
+                "flex items-center justify-center rounded-full border px-3 py-2 text-sm font-medium transition sm:flex-1",
                 {
                   "cursor-pointer focus:outline-none": !selection.unavailable,
                   "cursor-not-allowed opacity-25": selection.unavailable,

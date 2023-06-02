@@ -1,5 +1,5 @@
 import { RadioGroup } from "@headlessui/react";
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 
 export type Color = string;
@@ -32,8 +32,8 @@ export function ColorPicker({
               key={color}
               value={color}
               className={({ active, checked }) =>
-                classNames(
-                  "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none hover:animate-pulse transition",
+                clsx(
+                  "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 transition hover:animate-pulse focus:outline-none",
                   {
                     "ring ring-offset-1": active && checked,
                     "ring-2": !active && checked,

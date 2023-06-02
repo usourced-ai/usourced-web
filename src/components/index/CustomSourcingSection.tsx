@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 
 import { Button } from "@/components/common/Button";
@@ -38,7 +38,7 @@ export function CustomSourcingSection() {
           <Button
             color="brand"
             size="2xl"
-            className={classNames({
+            className={clsx({
               "animate__animated animate__rubberBand": hovered,
             })}
           >

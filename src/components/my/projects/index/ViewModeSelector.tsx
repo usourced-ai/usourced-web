@@ -6,7 +6,7 @@ import {
   ChevronDownIcon,
   ListBulletIcon,
 } from "@heroicons/react/24/outline";
-import classNames from "classnames";
+import clsx from "clsx";
 import { Fragment, useState } from "react";
 
 const VIEW_MODES = [
@@ -68,7 +68,7 @@ export function ViewModeSelector() {
                   <Listbox.Option
                     key={option.name}
                     className={({ active }) =>
-                      classNames(
+                      clsx(
                         active ? "bg-teal-500 text-white" : "text-gray-900",
                         "cursor-pointer select-none p-4 text-sm"
                       )
@@ -99,7 +99,7 @@ export function ViewModeSelector() {
                           ) : null}
                         </div>
                         <p
-                          className={classNames(
+                          className={clsx(
                             active ? "text-teal-200" : "text-gray-500",
                             "mt-2"
                           )}

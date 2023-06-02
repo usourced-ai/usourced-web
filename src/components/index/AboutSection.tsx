@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 
 function FeatureParagraph({
@@ -16,7 +16,7 @@ function FeatureParagraph({
       onMouseLeave={() => setHovered(false)}
     >
       <span
-        className={classNames("float-left pr-4 text-4xl", {
+        className={clsx("float-left pr-4 text-4xl", {
           "animate__animated animate__tada": hovered,
         })}
       >

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import pluralize from "pluralize";
 
 import { type Project, ProjectPhase } from "@/models/project";
@@ -6,7 +6,7 @@ import { type Project, ProjectPhase } from "@/models/project";
 export function ProjectStatusBadge({ project }: { project: Project }) {
   return (
     <span
-      className={classNames(
+      className={clsx(
         "inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ring-1 ring-inset",
         project.pendingTaskCount > 0
           ? "bg-red-50 text-red-700 ring-red-600/20"

@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 
 export type NavigationItem = {
@@ -15,9 +15,9 @@ export type NavigationItem = {
 function ItemIcon({ item }: { item: NavigationItem }) {
   return item.icon ? (
     <div
-      className={classNames(
+      className={clsx(
         item.current ? "text-teal-700" : "text-gray-400",
-        "inline-block mr-1"
+        "mr-1 inline-block"
       )}
     >
       <item.icon />
@@ -29,11 +29,11 @@ function PlainNavigationItem({ item }: { item: NavigationItem }) {
   return (
     <Link
       href={item.href}
-      className={classNames(
+      className={clsx(
         item.current
           ? "bg-gray-50 text-teal-700"
-          : "text-gray-700 hover:text-teal-700 hover:bg-gray-50",
-        "flex items-center gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+          : "text-gray-700 hover:bg-gray-50 hover:text-teal-700",
+        "flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
       )}
     >
       <ItemIcon item={item} />
@@ -53,15 +53,15 @@ function NestedNavigationItem({ item }: { item: NavigationItem }) {
       {({ open }) => (
         <>
           <Disclosure.Button
-            className={classNames(
+            className={clsx(
               item.current ? "bg-gray-50" : "hover:bg-gray-50",
-              "flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700"
+              "flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm font-semibold leading-6 text-gray-700"
             )}
           >
             <ItemIcon item={item} />
             <div className="grow">{item.name}</div>
             <ChevronRightIcon
-              className={classNames(
+              className={clsx(
                 open ? "rotate-90 text-gray-500" : "text-gray-400",
                 "h-4 w-4 shrink-0 transition"
               )}
@@ -73,9 +73,9 @@ function NestedNavigationItem({ item }: { item: NavigationItem }) {
                 <Disclosure.Button
                   as={Link}
                   href={subItem.href}
-                  className={classNames(
+                  className={clsx(
                     subItem.current ? "bg-gray-50" : "hover:bg-gray-50",
-                    "block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700"
+                    "block rounded-md py-2 pl-9 pr-2 text-sm leading-6 text-gray-700"
                   )}
                 >
                   {subItem.name}

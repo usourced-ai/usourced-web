@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 
 import { Avatar } from "@/components/common/Avatar";
@@ -11,13 +11,13 @@ export function ChatMessageView({ message }: { message: ChatMessage }) {
   const [isTyping, setIsTyping] = useState(true);
   return (
     <div
-      className={classNames("flex items-start", {
+      className={clsx("flex items-start", {
         "text-left mr-20": isFromRemote,
         "text-right ml-16": !isFromRemote,
       })}
     >
       <div
-        className={classNames({
+        className={clsx({
           "order-1": isFromRemote,
           "order-2": !isFromRemote,
         })}
@@ -25,7 +25,7 @@ export function ChatMessageView({ message }: { message: ChatMessage }) {
         <Avatar user={message.from} />
       </div>
       <div
-        className={classNames("flex-1", {
+        className={clsx("flex-1", {
           "order-2 ml-4": isFromRemote,
           "order-1 mr-4": !isFromRemote,
         })}
@@ -37,11 +37,11 @@ export function ChatMessageView({ message }: { message: ChatMessage }) {
         />
         {message.payload && (
           <div
-            className={classNames("transition duration-300 mt-1 flex", {
+            className={clsx("mt-1 flex transition duration-300", {
               "opacity-0": isTyping,
             })}
           >
-            <div className={classNames({ "ml-auto": !isFromRemote })}>
+            <div className={clsx({ "ml-auto": !isFromRemote })}>
               {message.payload}
             </div>
           </div>

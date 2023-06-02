@@ -1,6 +1,6 @@
 import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
+import clsx from "clsx";
 import { useRouter } from "next/router";
 
 import { Button } from "@/components/common/Button";
@@ -58,7 +58,7 @@ function MobileMenu({
             key={item.name}
             as="a"
             href={item.href}
-            className={classNames(
+            className={clsx(
               item.current
                 ? "border-brand bg-teal-50 text-brand hover:border-brand"
                 : "border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800",
@@ -95,11 +95,11 @@ export function AppNavBar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={classNames(
+                  className={clsx(
                     item.current
                       ? "text-gray-900 hover:border-teal-800 hover:text-teal-800"
                       : "border-transparent text-gray-600 hover:border-gray-300 hover:text-gray-700",
-                    "inline-flex items-center border-b-2 px-1 pt-1 text-md font-medium"
+                    "inline-flex items-center border-b-2 px-1 pt-1 font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >

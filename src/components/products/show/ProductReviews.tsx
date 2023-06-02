@@ -1,5 +1,5 @@
 import { StarIcon } from "@heroicons/react/24/solid";
-import classNames from "classnames";
+import clsx from "clsx";
 
 export function ProductReviews({ rating }: { rating: number }) {
   return (
@@ -14,9 +14,9 @@ export function ProductReviews({ rating }: { rating: number }) {
           {[0, 1, 2, 3, 4].map((r) => (
             <StarIcon
               key={r}
-              className={classNames(
+              className={clsx(
                 rating > r ? "text-yellow-400" : "text-gray-200",
-                "h-5 w-5 flex-shrink-0"
+                "h-5 w-5 shrink-0"
               )}
               aria-hidden="true"
             />

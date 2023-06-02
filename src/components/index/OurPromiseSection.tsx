@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 
 function ValueCard({
@@ -18,7 +18,7 @@ function ValueCard({
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className={classNames("mx-auto h-24 w-24", {
+        className={clsx("mx-auto h-24 w-24", {
           "animate__animated animate__bounce": hovered,
         })}
       >

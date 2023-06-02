@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 
 export function Button(props: {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export function Button(props: {
   return (
     <button
       type="button"
-      className={classNames(
+      className={clsx(
         "items-center justify-center rounded-full shadow-sm transition duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:animate-pulse-fast-once",
         {
           "px-2 py-1 text-xs": size === "xs",

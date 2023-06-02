@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -45,7 +45,7 @@ export function SidebarUserMenu() {
               {({ active }) => (
                 <Link
                   href="/"
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
@@ -58,7 +58,7 @@ export function SidebarUserMenu() {
               {({ active }) => (
                 <Link
                   href="/"
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
@@ -71,7 +71,7 @@ export function SidebarUserMenu() {
               {({ active }) => (
                 <Link
                   href="/"
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
@@ -86,7 +86,7 @@ export function SidebarUserMenu() {
               {({ active }) => (
                 <Link
                   href="/"
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
@@ -99,7 +99,7 @@ export function SidebarUserMenu() {
               {({ active }) => (
                 <Link
                   href="/"
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
@@ -114,7 +114,7 @@ export function SidebarUserMenu() {
               {({ active }) => (
                 <Link
                   href="/"
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}

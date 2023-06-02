@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 import { FaFileAlt } from "react-icons/fa";
 
@@ -7,7 +7,7 @@ import { type Order, OrderStatus } from "@/models/order";
 function OrderStatusDot({ status }: { status: OrderStatus }) {
   return (
     <span
-      className={classNames("inline-flex h-1.5 w-1.5 rounded-full", {
+      className={clsx("inline-flex h-1.5 w-1.5 rounded-full", {
         "bg-red-400": status === OrderStatus.Draft,
         "bg-yellow-400": status === OrderStatus.PendingProduction,
         "bg-green-400": status === OrderStatus.InProduction,

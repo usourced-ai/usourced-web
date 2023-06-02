@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
+import clsx from "clsx";
 import { Fragment } from "react";
 
 const currentUser = {
@@ -52,7 +52,7 @@ export function UserMenu() {
               {({ active }) => (
                 <a
                   href={item.href}
-                  className={classNames(
+                  className={clsx(
                     active ? "bg-gray-50" : "",
                     "block px-3 py-1 text-sm leading-6 text-gray-900"
                   )}
