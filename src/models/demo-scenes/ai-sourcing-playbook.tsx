@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import Image from "next/image";
 import { FaFilePdf } from "react-icons/fa";
 import { atom } from "recoil";
 
@@ -33,7 +34,9 @@ function newMessage(
 }
 
 function newImagePayload(url: string): JSX.Element {
-  return <img src={url} className="h-40 w-40" alt={url} />;
+  return (
+    <Image width={160} height={160} src={url} alt={url} className="h-40 w-40" />
+  );
 }
 
 function ButtonsPayload({
@@ -62,7 +65,7 @@ function ButtonsPayload({
 
 function newSummaryItem(label: string, value: string): JSX.Element {
   return (
-    <p>
+    <p key={label}>
       <span className="font-semibold">{label}: </span>
       {value}
     </p>

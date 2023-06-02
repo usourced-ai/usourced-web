@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import Image from "next/image";
 
 import { AI_AGENT, CURRENT_USER } from "@/models/chat";
 
@@ -77,8 +78,8 @@ export const WithPayloadsFromMe: Story = {
       from: CURRENT_USER,
       createdAt: new Date(),
       payload: (
-        <img
-          src="https://picsum.photos/300/300"
+        <Image
+          src="/images/index/values/customer.svg"
           className="h-32 w-32"
           alt="attachment"
         />

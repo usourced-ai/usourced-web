@@ -10,9 +10,8 @@ import {
 
 import type { NavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
 import { SidebarNavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
+import { SidebarUserMenu } from "@/components/layout/dashboard/SidebarUserMenu";
 import { Masthead } from "@/components/layout/Masthead";
-
-import { SidebarUserMenu } from "./SidebarUserMenu";
 
 const navigation: NavigationItem[] = [
   { name: "Dashboard", href: "#", icon: FaHome },

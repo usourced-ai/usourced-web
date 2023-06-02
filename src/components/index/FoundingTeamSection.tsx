@@ -1,11 +1,10 @@
 import { useState } from "react";
 
 import { FOUNDING_TEAM_MEMBERS, type MemberProfile } from "@/api/founding_team";
+import { Avatar } from "@/components/common/Avatar";
 import { Tooltip } from "@/components/common/Tooltip";
 import TeamMemberProfileSlideout from "@/components/index/TeamMemberProfileSlideout";
 import { useFirestoreImage } from "@/utils/firebase";
-
-const DEFAULT_PROFILE_IMAGE_URL = "/home/silhouette.png";
 
 function TeamMemberCard({ member }: { member: MemberProfile }) {
   const { image } = useFirestoreImage({
@@ -21,10 +20,10 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
           className="text-center"
           onClick={() => setOpen(true)}
         >
-          <img
-            src={image ?? DEFAULT_PROFILE_IMAGE_URL}
-            alt={member.name}
-            className="mx-auto h-40 w-40 rounded-full"
+          <Avatar
+            user={{ name: member.name, avatarUrl: image }}
+            size={160}
+            className="mx-auto"
           />
           <h5 className="mt-2">{member.name}</h5>
           <p className="text-sm text-gray-500">{member.title}</p>
@@ -32,7 +31,7 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
       </Tooltip>
       <TeamMemberProfileSlideout
         member={member}
-        memberImageUrl={image ?? DEFAULT_PROFILE_IMAGE_URL}
+        memberImageUrl={image ?? ""}
         open={open}
         setOpen={setOpen}
       />

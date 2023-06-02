@@ -1,6 +1,13 @@
 import { BellAlertIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 import { useNewsletterSubscription } from "@/api/newsletter_subscription";
+import backpack from "@/public/images/index/products/backpack.png";
+import cat from "@/public/images/index/products/cat.png";
+import fan from "@/public/images/index/products/fan.png";
+import mug from "@/public/images/index/products/mug.png";
+import phoneStand from "@/public/images/index/products/phone-stand.png";
+import smiley from "@/public/images/index/smiley.svg";
 
 function SignUpCard() {
   const { email, setEmail, subscribe } = useNewsletterSubscription();
@@ -38,28 +45,28 @@ function SignUpCard() {
 function ProductImages() {
   return (
     <>
-      <img
-        src="/images/index/products/phone-stand.png"
+      <Image
+        src={phoneStand}
         alt="Lavender Phone Stand"
         className="animate__animated animate__bounceIn animate__delay-1s absolute left-[-40px] top-[-60px] w-[300px]"
       />
-      <img
-        src="/images/index/products/mug.png"
+      <Image
+        src={mug}
         alt="Pink Cloud Mug"
         className="animate__animated animate__bounceIn animate__delay-2s absolute left-[260px] top-[28px] w-[280px]"
       />
-      <img
-        src="/images/index/products/fan.png"
+      <Image
+        src={fan}
         alt="Green Desk Fan"
         className="animate__animated animate__bounceIn animate__delay-1s absolute left-[580px] top-[-80px] w-[240px]"
       />
-      <img
-        src="/images/index/products/cat.png"
+      <Image
+        src={cat}
         alt="Fluffy White Cat Plushie"
         className="animate__animated animate__bounceIn animate__delay-2s absolute left-[860px] top-[70px] w-[240px]"
       />
-      <img
-        src="/images/index/products/backpack.png"
+      <Image
+        src={backpack}
         alt="Yellow Backpack"
         className="animate__animated animate__bounceIn animate__delay-1s absolute left-[1110px] top-[-70px] w-[280px] rotate-12"
       />
@@ -85,11 +92,7 @@ export function HeroSection() {
             <div className="animate__animated animate__tada mt-4 inline-block rounded-full bg-cream px-6 py-4 text-brand xl:ml-4">
               we make it
               <span className="-mb-3 ml-4 inline-block">
-                <img
-                  className="h-12 sm:h-16"
-                  src="/images/index/smiley.svg"
-                  alt=":)"
-                />
+                <Image src={smiley} alt=":)" className="h-12 w-auto sm:h-16" />
               </span>
             </div>
           </div>

@@ -3,10 +3,12 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { Fragment } from "react";
 
+import { Avatar } from "@/components/common/Avatar";
+
 const currentUser = {
+  id: "julia",
   name: "Julia Xu",
-  email: "",
-  profileImageUrl: "/images/demo/jx.jpg",
+  avatarUrl: "/images/demo/jx.jpg",
 };
 
 const userNavigation = [
@@ -19,11 +21,7 @@ export function UserMenu() {
     <Menu as="div" className="relative">
       <Menu.Button className="-m-1.5 flex items-center p-1.5">
         <span className="sr-only">Open user menu</span>
-        <img
-          className="h-8 w-8 rounded-full bg-gray-50"
-          src={currentUser.profileImageUrl}
-          alt="Julia Xu"
-        />
+        <Avatar size={32} user={currentUser} />
         <span className="hidden lg:flex lg:items-center">
           <span
             className="ml-4 text-sm font-semibold leading-6 text-gray-900"

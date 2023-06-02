@@ -2,6 +2,7 @@ import {
   MagnifyingGlassMinusIcon,
   MagnifyingGlassPlusIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import React from "react";
 
 import { Button } from "@/components/common/Button";
@@ -47,7 +48,7 @@ export function ProductCustomizer({ imageUrl }: { imageUrl: string }) {
         </div>
       </div>
       <div className="ml-2">
-        <img
+        <Image
           src={imageUrl}
           width={400}
           height={400}

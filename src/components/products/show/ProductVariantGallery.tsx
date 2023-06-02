@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function ProductVariantGallery({ imageUrls }: { imageUrls: string[] }) {
   return (
     <div>
@@ -6,7 +8,9 @@ export function ProductVariantGallery({ imageUrls }: { imageUrls: string[] }) {
       </h2>
       <div className="mt-4 grid grid-cols-2 gap-4 pr-2 md:grid-cols-4 lg:grid-cols-1">
         {imageUrls.map((imageUrl) => (
-          <img
+          <Image
+            width={168}
+            height={168}
             key={imageUrl}
             src={imageUrl}
             alt={imageUrl}

@@ -6,6 +6,7 @@ import { Fragment } from "react";
 import { FaLinkedin } from "react-icons/fa";
 
 import type { MemberProfile } from "@/api/founding_team";
+import { Avatar } from "@/components/common/Avatar";
 
 export default function TeamMemberProfileSlideout({
   member,
@@ -70,10 +71,10 @@ export default function TeamMemberProfileSlideout({
                       </div>
                     </div>
                     <div className="relative mt-12 flex-1 px-4 text-center sm:px-6">
-                      <img
-                        src={memberImageUrl}
-                        alt={member.name}
-                        className="mx-auto h-40 w-40 rounded-full"
+                      <Avatar
+                        user={{ name: member.name, avatarUrl: memberImageUrl }}
+                        size={160}
+                        className="mx-auto"
                       />
                       <h2 className="mt-4 font-brand text-3xl">
                         {member.name}

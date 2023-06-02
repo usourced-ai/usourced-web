@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaInstagram, FaLinkedin, FaMapPin } from "react-icons/fa";
 
 import { useNewsletterSubscription } from "@/api/newsletter_subscription";
 import { Button } from "@/components/common/Button";
+import usourcedMastheadWhite from "@/public/images/footer/usourced-masthead-white.png";
 
 const SOCIAL_LINKS = [
   {
@@ -67,10 +69,10 @@ export function AppFooter() {
       <div className="mx-auto max-w-screen-xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <NewsletterSection />
         <div className="mt-10 border-t border-white/10 pt-8">
-          <img
-            className="h-10"
-            src="/images/footer/usourced-masthead-white.png"
+          <Image
+            src={usourcedMastheadWhite}
             alt="USourced"
+            className="h-10 w-auto"
           />
         </div>
         <div className="ml-1 mt-6 text-lg text-gray-200">

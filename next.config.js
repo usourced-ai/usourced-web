@@ -7,6 +7,16 @@ module.exports = withBundleAnalyzer({
   eslint: {
     dirs: ["."],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+        port: "",
+        pathname: "/v0/b/usourced-platform.appspot.com/**",
+      },
+    ],
+  },
   poweredByHeader: false,
   trailingSlash: true,
   basePath: "",

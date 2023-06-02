@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function ProductMockupEmptyView() {
   return (
     <div className="mx-auto px-4 text-center text-xl text-gray-500">
@@ -9,8 +11,10 @@ function ProductMockupEmptyView() {
 function ProductMockupImageView({ url }: { url: string }) {
   return (
     <div className="h-full w-full bg-white">
-      <img
+      <Image
         key={url} // This forces a re-render when the url changes for animations
+        width={352}
+        height={440}
         src={url}
         className="animate__animated animate__fadeIn h-full object-contain"
         alt="Mockup"

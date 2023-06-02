@@ -31,7 +31,7 @@ export async function addNewsletterSubscriber(
 }
 
 export function useFirestoreImage({ path }: { path: string }) {
-  const [image, setImage] = useState<string | null>(null);
+  const [image, setImage] = useState<string | undefined>(undefined);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {

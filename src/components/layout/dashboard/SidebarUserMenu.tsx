@@ -4,6 +4,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { Fragment } from "react";
 
+import { Avatar } from "@/components/common/Avatar";
+
 export function SidebarUserMenu() {
   return (
     <Menu as="div" className="relative inline-block w-full text-left">
@@ -11,10 +13,11 @@ export function SidebarUserMenu() {
         <Menu.Button className="group w-full rounded-md bg-gray-100 px-3.5 py-2 text-left text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 focus:ring-offset-gray-100">
           <span className="flex w-full items-center justify-between">
             <span className="flex min-w-0 items-center justify-between space-x-3">
-              <img
-                className="h-10 w-10 shrink-0 rounded-full bg-gray-300"
-                src="/images/demo/jx.jpg"
-                alt="Julia Xu"
+              <Avatar
+                user={{
+                  name: "Julia Xu",
+                  avatarUrl: "/images/demo/jx.jpg",
+                }}
               />
               <span className="flex min-w-0 flex-1 flex-col">
                 <span className="truncate text-sm font-medium text-gray-900">

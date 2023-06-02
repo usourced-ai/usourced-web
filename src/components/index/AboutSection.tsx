@@ -1,5 +1,8 @@
 import clsx from "clsx";
+import Image from "next/image";
 import { useState } from "react";
+
+import star from "@/public/images/index/star.png";
 
 function FeatureParagraph({
   icon,
@@ -27,6 +30,17 @@ function FeatureParagraph({
   );
 }
 
+function Star() {
+  return (
+    <Image
+      src={star}
+      alt=""
+      className="mx-4 inline h-6 w-auto align-middle"
+      aria-hidden="true"
+    />
+  );
+}
+
 export function AboutSection() {
   return (
     <section
@@ -35,17 +49,9 @@ export function AboutSection() {
     >
       <div className="mx-auto max-w-screen-lg sm:px-6 lg:px-8">
         <h2 className="mb-4 text-center font-brand text-4xl text-brand md:text-5xl">
-          <img
-            src="/images/index/star.png"
-            alt=""
-            className="mr-4 inline h-6 align-middle"
-          />
+          <Star />
           About USourced
-          <img
-            src="/images/index/star.png"
-            alt=""
-            className="ml-4 inline h-6 align-middle"
-          />
+          <Star />
         </h2>
         <div className="mx-4 mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>

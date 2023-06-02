@@ -1,20 +1,40 @@
+import clsx from "clsx";
+import Image from "next/image";
 import { useState } from "react";
 
-import type { User } from "@/models/user";
-
-export function Avatar({ user }: { user: User }) {
+export function Avatar({
+  user,
+  size = 40,
+  className = "",
+}: {
+  user: {
+    name: string;
+    avatarUrl?: string;
+    [key: string]: any;
+  };
+  size?: number;
+  className?: string;
+}) {
   const [imageError, setImageError] = useState(false);
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200">
-      {imageError ? (
+    <div
+      className={clsx(
+        "flex items-center justify-center rounded-full bg-gray-200",
+        className
+      )}
+      style={{ width: size, height: size }}
+    >
+      {!user.avatarUrl || imageError ? (
         <span className="text-2xl font-medium text-gray-500">
           {user.name[0]}
         </span>
       ) : (
-        <img
-          className="h-10 w-10 rounded-full"
+        <Image
+          width={size}
+          height={size}
           src={user.avatarUrl}
           alt={user.name}
+          className="rounded-full"
           onError={() => setImageError(true)}
         />
       )}

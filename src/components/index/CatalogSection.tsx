@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -17,7 +18,9 @@ function CategoryCard({ category }: { category: ProductCategory }) {
       onMouseLeave={() => setHovered(false)}
     >
       <Link href={`/products/${category.id}`}>
-        <img
+        <Image
+          width={160}
+          height={160}
           className="h-40 w-40"
           src={category.imageUrl}
           alt={category.name}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaExpandArrowsAlt, FaFeatherAlt } from "react-icons/fa";
 
 import { OrderBadge } from "@/components/my/orders/OrderBadge";
@@ -6,10 +7,12 @@ import type { Project } from "@/models/project";
 
 function ProjectImageView({ project }: { project: Project }) {
   return project.imageUrl ? (
-    <img
-      className="mx-auto h-32 w-32 shrink-0"
+    <Image
+      width={128}
+      height={128}
       src={project.imageUrl}
       alt={project.name}
+      className="mx-auto h-32 w-32 shrink-0"
     />
   ) : (
     <div className="mx-auto flex h-32 w-32 items-center justify-center text-6xl">
