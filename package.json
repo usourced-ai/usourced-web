@@ -33,6 +33,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@typeform/embed": "^2.11.0",
     "@types/pluralize": "^0.0.29",
+    "babel-plugin-superjson-next": "^0.4.5",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.8",
     "firebase": "^9.22.1",
@@ -47,6 +48,7 @@
     "react-icons": "^4.9.0",
     "recoil": "^0.7.7",
     "scrollreveal": "^4.0.9",
+    "superjson": "^1.12.3",
     "typewriter-effect": "^2.20.1"
   },
   "devDependencies": {
