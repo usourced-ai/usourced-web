@@ -3,13 +3,16 @@ import { NextSeo } from "next-seo";
 
 import { AppConfig } from "@/config/AppConfig";
 
-type IMetaProps = {
-  title: string;
+type MetaProps = {
+  title: string | string[];
   description?: string;
   canonical?: string;
 };
 
-export function Meta(props: IMetaProps) {
+export function Meta(props: MetaProps) {
+  const title = Array.isArray(props.title)
+    ? props.title.join(" | ")
+    : props.title;
   return (
     <>
       <Head>
@@ -42,12 +45,12 @@ export function Meta(props: IMetaProps) {
         <link rel="icon" href="/images/favicon.ico" key="favicon" />
       </Head>
       <NextSeo
-        title={props.title}
+        title={title}
         titleTemplate={`%s | ${AppConfig.site_name}`}
         description={props.description}
         canonical={props.canonical}
         openGraph={{
-          title: props.title,
+          title,
           description: props.description,
           url: props.canonical,
           locale: AppConfig.locale,
