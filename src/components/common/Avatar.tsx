@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function Avatar({
   user,
-  size = 40,
+  size = 10,
   className = "",
 }: {
   user: {
@@ -15,6 +15,7 @@ export function Avatar({
   size?: number;
   className?: string;
 }) {
+  const sizePt = size * 4;
   const [imageError, setImageError] = useState(false);
   return (
     <div
@@ -22,7 +23,7 @@ export function Avatar({
         "flex items-center justify-center rounded-full bg-gray-200",
         className
       )}
-      style={{ width: size, height: size }}
+      style={{ width: sizePt, height: sizePt }}
     >
       {!user.avatarUrl || imageError ? (
         <span className="text-2xl font-medium text-gray-500">
@@ -30,8 +31,8 @@ export function Avatar({
         </span>
       ) : (
         <Image
-          width={size}
-          height={size}
+          width={sizePt}
+          height={sizePt}
           src={user.avatarUrl}
           alt={user.name}
           className="rounded-full"

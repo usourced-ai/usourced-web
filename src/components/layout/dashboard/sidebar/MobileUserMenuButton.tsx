@@ -11,7 +11,7 @@ export function MobileUserMenuButton() {
     <Menu as="div" className="relative">
       <Menu.Button className="-m-1.5 flex items-center p-1.5">
         <span className="sr-only">Open user menu</span>
-        <Avatar size={32} user={CURRENT_USER} />
+        <Avatar size={8} user={CURRENT_USER} />
         <span className="hidden lg:flex lg:items-center">
           <span
             className="ml-4 text-sm font-semibold leading-6 text-gray-900"
