@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 import { Avatar } from "@/components/common/Avatar";
+import { CURRENT_USER } from "@/models/chat";
 
 export function SidebarUserMenu() {
   return (
@@ -13,12 +14,7 @@ export function SidebarUserMenu() {
         <Menu.Button className="group w-full rounded-md bg-gray-100 px-3.5 py-2 text-left text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 focus:ring-offset-gray-100">
           <span className="flex w-full items-center justify-between">
             <span className="flex min-w-0 items-center justify-between space-x-3">
-              <Avatar
-                user={{
-                  name: "Julia Xu",
-                  avatarUrl: "/images/demo/jx.jpg",
-                }}
-              />
+              <Avatar user={CURRENT_USER} />
               <span className="flex min-w-0 flex-1 flex-col">
                 <span className="truncate text-sm font-medium text-gray-900">
                   Julia Xu
