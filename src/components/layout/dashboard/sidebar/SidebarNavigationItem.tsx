@@ -3,14 +3,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
 
-export type NavigationItem = {
-  name: string;
-  href: string;
-  badge?: string;
-  icon?: React.ComponentType;
-  current?: boolean;
-  children?: NavigationItem[];
-};
+import type { NavigationItem } from "@/models/navigation";
 
 function ItemIcon({ item }: { item: NavigationItem }) {
   return item.icon ? (

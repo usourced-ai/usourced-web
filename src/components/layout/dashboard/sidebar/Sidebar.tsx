@@ -1,43 +1,11 @@
 import type { NextRouter } from "next/router";
 import { useRouter } from "next/router";
-import {
-  FaClipboard,
-  FaFileAlt,
-  FaHome,
-  FaListUl,
-  FaShippingFast,
-} from "react-icons/fa";
 
-import type { NavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
-import { SidebarNavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
-import { SidebarUserMenu } from "@/components/layout/dashboard/SidebarUserMenu";
+import { SidebarNavigationItem } from "@/components/layout/dashboard/sidebar/SidebarNavigationItem";
+import { SidebarUserMenuItem } from "@/components/layout/dashboard/sidebar/SidebarUserMenuItem";
 import { Masthead } from "@/components/layout/Masthead";
-import { AIChatMenu } from "@/components/my/projects/chat/AIChatMenu";
-
-const navigation: NavigationItem[] = [
-  { name: "Dashboard", href: "#", icon: FaHome },
-  {
-    name: "Projects",
-    href: "/my/projects",
-    icon: FaClipboard,
-    children: [
-      { name: "Grid View", href: "/my/projects/grid" },
-      { name: "List View", href: "/my/projects/list" },
-      { name: "Calendar View", href: "/my/projects/calendar" },
-    ],
-  },
-  { name: "Tasks", href: "#", icon: FaListUl, badge: "3" },
-  {
-    name: "Orders",
-    href: "#",
-    icon: FaFileAlt,
-    children: [
-      { name: "Sample Orders", href: "#" },
-      { name: "Production Orders", href: "#" },
-    ],
-  },
-  { name: "Shipments", href: "#", icon: FaShippingFast },
-];
+import { AIChatMenuItem } from "@/components/my/projects/chat/AIChatMenuItem";
+import { navigation, type NavigationItem } from "@/models/navigation";
 
 function markCurrentNavigationItem(
   router: NextRouter,
@@ -81,10 +49,10 @@ export function Sidebar() {
           <li>
             <ul className="mb-6 space-y-2">
               <li>
-                <AIChatMenu />
+                <AIChatMenuItem />
               </li>
               <li>
-                <SidebarUserMenu />
+                <SidebarUserMenuItem />
               </li>
             </ul>
           </li>

@@ -1,10 +1,10 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
-import { Sidebar } from "@/components/layout/dashboard/Sidebar";
+import { Sidebar } from "@/components/layout/dashboard/sidebar/Sidebar";
 
-function CollapsableSidebar({
+export function CollapsableSidebar({
   sidebarOpen,
   setSidebarOpen,
 }: {
@@ -71,41 +71,4 @@ function CollapsableSidebar({
       </Dialog>
     </Transition.Root>
   );
-}
-
-function DesktopSidebar() {
-  return (
-    <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-      <Sidebar />
-    </div>
-  );
-}
-
-/**
- * Provide a responsive sidebar that can be collapsed on mobile.
- * @returns {sidebarOpen, setSidebarOpen, sidebar}
- * - `sidebarOpen` is a boolean that indicates whether the sidebar is open.
- * - `setSidebarOpen` is a function that sets the sidebar open state.
- * - `sidebar` is the sidebar component.
- */
-export function useResponsiveSidebar(): {
-  sidebarOpen: boolean;
-  setSidebarOpen: (open: boolean) => void;
-  sidebar: JSX.Element;
-} {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const sidebar = (
-    <>
-      <CollapsableSidebar
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
-      />
-      <DesktopSidebar />
-    </>
-  );
-  return {
-    sidebarOpen,
-    setSidebarOpen,
-    sidebar,
-  };
 }

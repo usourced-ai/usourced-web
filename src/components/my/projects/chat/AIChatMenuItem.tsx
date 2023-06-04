@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaMagic } from "react-icons/fa";
 
-import { AIChatSlideout } from "./AIChatSlideout";
+import { AIChatSlideout } from "@/components/my/projects/chat/AIChatSlideout";
 
-export function AIChatMenu() {
+export function AIChatMenuItem() {
   const [open, setOpen] = useState(false);
   return (
     <>

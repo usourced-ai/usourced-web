@@ -4,7 +4,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
-import { UserMenu } from "@/components/layout/dashboard/UserMenu";
+import { MobileUserMenuButton } from "@/components/layout/dashboard/sidebar/MobileUserMenuButton";
 
 function MobileMenuButton({
   setSidebarOpen,
@@ -76,7 +76,7 @@ export function MobileNavBar({
                 className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200"
                 aria-hidden="true"
               />
-              <UserMenu />
+              <MobileUserMenuButton />
             </div>
           </div>
         </div>
