@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FOUNDING_TEAM_MEMBERS, type MemberProfile } from "@/api/founding_team";
 import { Avatar } from "@/components/common/Avatar";
 import { Tooltip } from "@/components/common/Tooltip";
-import TeamMemberProfileSlideout from "@/components/index/TeamMemberProfileSlideout";
+import { TeamMemberProfileSlideout } from "@/components/index/TeamMemberProfileSlideout";
 import { useFirestoreImage } from "@/utils/firebase";
 
 function TeamMemberCard({ member }: { member: MemberProfile }) {

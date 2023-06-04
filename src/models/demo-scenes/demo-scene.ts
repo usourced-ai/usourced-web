@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import type { RecoilState } from "recoil";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
-import type { ChatMessage, ChatState } from "@/models/chat";
+import { type ChatMessage, type ChatState } from "@/models/chat";
 
 export type DemoScene = {
   messages: ChatMessage[];

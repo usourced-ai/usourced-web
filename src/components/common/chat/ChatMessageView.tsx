@@ -6,7 +6,13 @@ import { MessageTimeView } from "@/components/common/chat/MessageTimeView";
 import { MessageView } from "@/components/common/chat/MessageView";
 import { type ChatMessage, CURRENT_USER } from "@/models/chat";
 
-export function ChatMessageView({ message }: { message: ChatMessage }) {
+export function ChatMessageView({
+  message,
+  useTypewriter,
+}: {
+  message: ChatMessage;
+  useTypewriter?: boolean;
+}) {
   const isFromRemote = message.from.id !== CURRENT_USER.id;
   const [isTyping, setIsTyping] = useState(true);
   return (
@@ -32,7 +38,7 @@ export function ChatMessageView({ message }: { message: ChatMessage }) {
       >
         <MessageView
           message={message}
-          useTypewriter={isFromRemote}
+          useTypewriter={useTypewriter && isFromRemote}
           onFinishTyping={() => setIsTyping(false)}
         />
         {message.payload && (

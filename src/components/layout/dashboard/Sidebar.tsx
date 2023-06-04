@@ -12,6 +12,7 @@ import type { NavigationItem } from "@/components/layout/dashboard/SidebarNaviga
 import { SidebarNavigationItem } from "@/components/layout/dashboard/SidebarNavigationItem";
 import { SidebarUserMenu } from "@/components/layout/dashboard/SidebarUserMenu";
 import { Masthead } from "@/components/layout/Masthead";
+import { AIChatMenu } from "@/components/my/projects/chat/AIChatMenu";
 
 const navigation: NavigationItem[] = [
   { name: "Dashboard", href: "#", icon: FaHome },
@@ -59,7 +60,7 @@ function markCurrentNavigationItem(
 export function Sidebar() {
   const router = useRouter();
   return (
-    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 px-6">
+    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
       <div className="h-16 shrink-0 pt-4">
         <Masthead className="h-10" />
       </div>
@@ -76,8 +77,16 @@ export function Sidebar() {
               ))}
             </ul>
           </li>
-          <li className="mb-6 mt-auto">
-            <SidebarUserMenu />
+          <li className="grow" />
+          <li>
+            <ul className="mb-6 space-y-2">
+              <li>
+                <AIChatMenu />
+              </li>
+              <li>
+                <SidebarUserMenu />
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

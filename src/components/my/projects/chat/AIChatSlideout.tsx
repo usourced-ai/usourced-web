@@ -1,21 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { decode } from "he";
-import Link from "next/link";
 import { Fragment } from "react";
-import { FaLinkedin } from "react-icons/fa";
 
-import type { MemberProfile } from "@/api/founding_team";
-import { Avatar } from "@/components/common/Avatar";
+import { AIChatView } from "@/components/my/projects/chat/AIChatView";
 
-export function TeamMemberProfileSlideout({
-  member,
-  memberImageUrl,
+export function AIChatSlideout({
   open,
   setOpen,
 }: {
-  member: MemberProfile;
-  memberImageUrl: string;
   open: boolean;
   setOpen: (open: boolean) => void;
 }) {
@@ -46,7 +38,7 @@ export function TeamMemberProfileSlideout({
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-lg">
+                <Dialog.Panel className="pointer-events-auto w-screen max-w-3xl">
                   <div
                     className="flex h-full flex-col overflow-y-scroll bg-cream bg-cover bg-bottom bg-no-repeat py-6 shadow-xl"
                     style={{
@@ -56,7 +48,7 @@ export function TeamMemberProfileSlideout({
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                          Biography
+                          USourced AI
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
@@ -70,28 +62,8 @@ export function TeamMemberProfileSlideout({
                         </div>
                       </div>
                     </div>
-                    <div className="relative mt-12 flex-1 px-4 text-center sm:px-6">
-                      <Avatar
-                        user={{ name: member.name, avatarUrl: memberImageUrl }}
-                        size={160}
-                        className="mx-auto"
-                      />
-                      <h2 className="mt-4 font-brand text-3xl">
-                        {member.name}
-                      </h2>
-                      <p className="text-gray-500">{member.title}</p>
-                      {member.bio && (
-                        <div className="mt-8 px-4">
-                          <p className="border-t border-gray-300 pt-4 text-left">
-                            {decode(member.bio)}
-                          </p>
-                        </div>
-                      )}
-                      {member.linkedin_url && (
-                        <Link href={member.linkedin_url}>
-                          <FaLinkedin size={24} className="mx-auto mt-4" />
-                        </Link>
-                      )}
+                    <div className="flex-1 px-4">
+                      <AIChatView />
                     </div>
                   </div>
                 </Dialog.Panel>

@@ -1,7 +1,7 @@
 import { enqueueSnackbar } from "notistack";
 import { useEffect } from "react";
 
-import { AIChatSlideout } from "@/components/ai-sourcing/AIChatSlideout";
+import { AIChatView } from "@/components/ai-sourcing/AIChatView";
 import { AIProductView } from "@/components/ai-sourcing/AIProductView";
 import { Meta } from "@/layouts/Meta";
 import { StorefrontLayout } from "@/layouts/StorefrontLayout";
@@ -25,7 +25,7 @@ export default function AiSourcingAgentPage() {
         <div className="mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div className="lg:order-2">
-              <AIChatSlideout />
+              <AIChatView />
             </div>
             <div className="lg:order-1">
               <AIProductView />

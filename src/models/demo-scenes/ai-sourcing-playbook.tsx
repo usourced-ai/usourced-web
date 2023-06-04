@@ -6,9 +6,9 @@ import { atom } from "recoil";
 
 import { Button } from "@/components/common/Button";
 import type { ChatMessage, ChatState } from "@/models/chat";
-import { AI_AGENT, CURRENT_USER } from "@/models/chat";
 import type { DemoScene } from "@/models/demo-scenes/demo-scene";
 import { useDemoScene } from "@/models/demo-scenes/demo-scene";
+import { newMessage } from "@/utils/chat-utils";
 
 dayjs.extend(localizedFormat);
 
@@ -18,20 +18,6 @@ type SceneDelta = {
   productMockupState?: string;
   summary?: JSX.Element[];
 };
-
-function newMessage(
-  text: string,
-  is_ai: boolean,
-  payload?: JSX.Element
-): ChatMessage {
-  return {
-    id: Math.random().toString(),
-    text,
-    createdAt: dayjs().toDate(),
-    from: is_ai ? AI_AGENT : CURRENT_USER,
-    payload,
-  };
-}
 
 function newImagePayload(url: string): JSX.Element {
   return (
