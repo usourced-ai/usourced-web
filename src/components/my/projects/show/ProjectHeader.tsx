@@ -1,7 +1,7 @@
 import { PencilIcon } from "@heroicons/react/24/outline";
 
+import { AppButton } from "@/components/common/AppButton";
 import { BreadcrumbNav } from "@/components/my/projects/BreadcrumbNav";
-import { ViewModeSelector } from "@/components/my/projects/index/ViewModeSelector";
 
 const navItems = [{ label: "My Projects", href: "/my/projects" }];
 
@@ -16,21 +16,7 @@ export function ProjectHeader({ projectName }: { projectName: string }) {
           </h1>
         </div>
         <div className="mt-5 flex space-x-4 lg:ml-4 lg:mt-0">
-          <span>
-            <button
-              type="button"
-              className="inline-flex items-center gap-x-1.5 rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            >
-              <PencilIcon
-                className="h-4 w-4 text-gray-400"
-                aria-hidden="true"
-              />
-              New Project
-            </button>
-          </span>
-          <span>
-            <ViewModeSelector />
-          </span>
+          <AppButton icon={PencilIcon} label="New Project" />
         </div>
       </div>
     </header>

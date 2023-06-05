@@ -1,6 +1,8 @@
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 
-export function ProjectHighlightCard() {
+import type { Project } from "@/models/project";
+
+export function ProjectHighlightCard({ project }: { project: Project }) {
   return (
     <div>
       <h2 className="sr-only">Summary</h2>
@@ -11,7 +13,7 @@ export function ProjectHighlightCard() {
               Project Phase
             </dt>
             <dd className="mt-1 text-base font-semibold leading-6 text-gray-900">
-              Sample
+              {project.phase}
             </dd>
           </div>
           <div className="flex-none self-end px-6 pt-4">

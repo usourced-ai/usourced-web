@@ -1,4 +1,7 @@
 import type { Order } from "@/models/order";
+import type { ProjectRequest } from "@/models/project-request";
+
+import type { ProjectFile } from "./project-file";
 
 export enum ProjectPhase {
   Quoting = "Quoting",
@@ -14,5 +17,7 @@ export type Project = {
   imageUrl?: string;
   phase: ProjectPhase;
   pendingTaskCount: number;
+  originalRequest?: ProjectRequest;
+  projectFiles: ProjectFile[];
   orders: Order[];
 };

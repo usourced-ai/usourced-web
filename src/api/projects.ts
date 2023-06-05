@@ -133,6 +133,47 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 2,
     imageUrl: "/images/demo/projects/Beige Baseball Cap.png",
     orders: [],
+    projectFiles: [],
+    originalRequest: {
+      id: "0",
+      name: "Beige Baseball Cap",
+      createdAt: new Date("2023-01-03"),
+      updatedAt: new Date("2023-01-03"),
+      attributes: [
+        {
+          name: "Color",
+          value: "Beige",
+        },
+        {
+          name: "Material",
+          value: "Polyester",
+        },
+        {
+          name: "Logo",
+          value: "Embroidered",
+        },
+        {
+          name: "Packaging",
+          value: "Individual Polybag",
+        },
+        {
+          name: "Size",
+          value: "10 in.",
+        },
+        {
+          name: "Quantity",
+          value: "100/200/500",
+        },
+        {
+          name: "Target Unit Price",
+          value: "$10.00",
+        },
+        {
+          name: "Target Timeline",
+          value: "Delivery in 1 month",
+        },
+      ],
+    },
   },
   "1": {
     id: "1",
@@ -141,6 +182,7 @@ export const projects: Record<string, Project> = {
     phase: ProjectPhase.Quoting,
     pendingTaskCount: 1,
     orders: [],
+    projectFiles: [],
   },
   "2": {
     id: "2",
@@ -150,6 +192,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Blue Textured Notebook.png",
     orders: [],
+    projectFiles: [],
   },
   "3": {
     id: "3",
@@ -159,6 +202,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Yellow Backpack.png",
     orders: [],
+    projectFiles: [],
   },
   "4": {
     id: "4",
@@ -168,6 +212,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Colorful Packaging Box.png",
     orders: [orders["4-0"]!],
+    projectFiles: [],
   },
   "5": {
     id: "5",
@@ -177,6 +222,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Fluffy White Cat Plushie.png",
     orders: [orders["5-0"]!],
+    projectFiles: [],
   },
   "6": {
     id: "6",
@@ -186,6 +232,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Green Desk Fan.png",
     orders: [orders["6-1"]!, orders["6-0"]!],
+    projectFiles: [],
   },
   "7": {
     id: "7",
@@ -195,6 +242,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Lavender Phone Stand.png",
     orders: [orders["7-0"]!],
+    projectFiles: [],
   },
   "8": {
     id: "8",
@@ -204,6 +252,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Orange Glass Water Bottle.png",
     orders: [orders["8-0"]!],
+    projectFiles: [],
   },
   "9": {
     id: "9",
@@ -213,6 +262,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Pink Cloud Mug.png",
     orders: [orders["9-0"]!],
+    projectFiles: [],
   },
   "10": {
     id: "10",
@@ -222,6 +272,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Pink Fabric Pen Pouch.png",
     orders: [orders["10-0"]!, orders["10-1"]!],
+    projectFiles: [],
   },
   "11": {
     id: "11",
@@ -231,6 +282,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 1,
     imageUrl: "/images/demo/projects/Rose Gold Pen.png",
     orders: [orders["11-0"]!, orders["11-1"]!],
+    projectFiles: [],
   },
   "12": {
     id: "12",
@@ -240,6 +292,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Sapphire Blue Candle.png",
     orders: [orders["12-0"]!, orders["12-1"]!],
+    projectFiles: [],
   },
   "13": {
     id: "13",
@@ -249,6 +302,7 @@ export const projects: Record<string, Project> = {
     pendingTaskCount: 0,
     imageUrl: "/images/demo/projects/Teal Blue USB Charger Keychain.png",
     orders: [orders["13-0"]!, orders["13-1"]!],
+    projectFiles: [],
   },
   "14": {
     id: "14",
@@ -259,6 +313,7 @@ export const projects: Record<string, Project> = {
     imageUrl:
       "/images/demo/projects/White V-Neck T-Shirt with Embroidered Flowers.png",
     orders: [orders["14-0"]!, orders["14-1"]!],
+    projectFiles: [],
   },
 };
 
