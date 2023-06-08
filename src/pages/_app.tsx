@@ -2,6 +2,7 @@ import "@/styles/global.css";
 
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import NextNProgress from "nextjs-progressbar";
 import { RecoilRoot } from "recoil";
 
 import { NotistackProvider } from "@/components/layout/root/NotistackProvider";
@@ -32,6 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <RecoilRoot>
         <NotistackProvider>
+          <NextNProgress color="#333" />
           <Component {...pageProps} />
         </NotistackProvider>
       </RecoilRoot>
