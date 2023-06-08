@@ -22,7 +22,7 @@ function TeamMemberCard({ member }: { member: MemberProfile }) {
         >
           <Avatar
             user={{ name: member.name, avatarUrl: image }}
-            size={160}
+            size={40}
             className="mx-auto"
           />
           <h5 className="mt-2">{member.name}</h5>

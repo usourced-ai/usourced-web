@@ -73,7 +73,7 @@ export function TeamMemberProfileSlideout({
                     <div className="relative mt-12 flex-1 px-4 text-center sm:px-6">
                       <Avatar
                         user={{ name: member.name, avatarUrl: memberImageUrl }}
-                        size={160}
+                        size={40}
                         className="mx-auto"
                       />
                       <h2 className="mt-4 font-brand text-3xl">
