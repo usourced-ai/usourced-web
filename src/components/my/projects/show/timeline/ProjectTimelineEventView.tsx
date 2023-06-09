@@ -1,9 +1,12 @@
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";
 import { FaTruckLoading } from "react-icons/fa";
 
 import type { ProjectTimelineEvent } from "@/models/project-timeline";
+
+dayjs.extend(relativeTime);
 
 function EventIcon({ type }: { type: string }) {
   if (type === "paid") {
