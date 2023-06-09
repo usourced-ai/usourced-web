@@ -1,3 +1,6 @@
+import { enqueueSnackbar } from "notistack";
+import { useEffect } from "react";
+
 import {
   projectsInProduction,
   projectsInQuoting,
@@ -9,6 +12,14 @@ import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
 
 export default function MyProjectsPage() {
+  useEffect(() => {
+    enqueueSnackbar(
+      'To see the AI customer agent in action, click "Chat with AI".',
+      {
+        className: "text-xl",
+      }
+    );
+  }, []);
   return (
     <AppLayout meta={<Meta title="My Projects" />}>
       <ProjectHeader />

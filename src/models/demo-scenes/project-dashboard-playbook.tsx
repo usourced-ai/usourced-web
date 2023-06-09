@@ -48,7 +48,7 @@ export const chatState = {
       </div>
     ),
     newMessage(
-      "Great! And how are we doing on adjusting the flower earring samples?",
+      "Great! And how are we doing on adjusting the phone stand samples?",
       false
     ),
     newMessage(
