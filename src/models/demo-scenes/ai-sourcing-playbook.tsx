@@ -81,7 +81,17 @@ const sceneDeltas = [
   },
   {
     message: newMessage(
-      "That's no problem! Do you have any sketches or drawings for how you would like the plushie to look like? You can drag it onto this chat.",
+      "That's no problem! What height would you like it to be roughly?",
+      true
+    ),
+  },
+  {
+    message: newMessage("About 6 inches tall", false),
+    summary: [newSummaryItem("Size", "6 in.")],
+  },
+  {
+    message: newMessage(
+      "We can do that! Do you have any sketches or drawings for how you would like the plushie to look like? You can drag it onto this chat.",
       true
     ),
   },
