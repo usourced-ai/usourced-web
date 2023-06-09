@@ -32,7 +32,7 @@ export function OrderBadge({ order }: { order: Order }) {
   return (
     <Link
       href={`/my/orders/${order.id}`}
-      className="inline-flex w-full items-center justify-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200"
+      className="inline-flex w-full items-center justify-center gap-x-2 rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200"
     >
       <FaFileAlt className="shrink-0" />
       <span className="truncate">{order.name}</span>

@@ -14,13 +14,13 @@ type Story = StoryObj<typeof ProjectFileGalleryCard>;
 
 export const Default: Story = {
   args: {
-    projectFiles: [],
+    files: [],
   },
 };
 
 export const WithFiles: Story = {
   args: {
-    projectFiles: [
+    files: [
       {
         id: "file1.jpg",
         title: "File 1",

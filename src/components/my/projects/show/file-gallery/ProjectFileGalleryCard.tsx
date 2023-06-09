@@ -1,12 +1,8 @@
-import { ProjectFileEmptyGallery } from "@/components/my/projects/show/file-gallery/ProjectFileEmptyGallery";
-import { ProjectFileGallery } from "@/components/my/projects/show/file-gallery/ProjectFileGallery";
-import type { ProjectFile } from "@/models/project-file";
+import { FileEmptyGallery } from "@/components/my/projects/show/file-gallery/FileEmptyGallery";
+import { FileGallery } from "@/components/my/projects/show/file-gallery/FileGallery";
+import type { Attachment } from "@/models/attachment";
 
-export function ProjectFileGalleryCard({
-  projectFiles,
-}: {
-  projectFiles: ProjectFile[];
-}) {
+export function ProjectFileGalleryCard({ files }: { files: Attachment[] }) {
   return (
     <div className="rounded-lg bg-white shadow">
       <div className="flex flex-1 items-stretch overflow-hidden">
@@ -16,10 +12,10 @@ export function ProjectFileGalleryCard({
               Project Files
             </h2>
             <div>
-              {projectFiles.length === 0 ? (
-                <ProjectFileEmptyGallery />
+              {files.length === 0 ? (
+                <FileEmptyGallery />
               ) : (
-                <ProjectFileGallery projectFiles={projectFiles} />
+                <FileGallery files={files} />
               )}
             </div>
           </div>

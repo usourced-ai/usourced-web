@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { projects } from "@/api/projects";
-import { ProjectPhase } from "@/models/project";
+import { ProjectPhase } from "@/models/project-phase";
 
 import { ProjectStatusBadge } from "./ProjectStatusBadge";
 

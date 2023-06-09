@@ -10,7 +10,7 @@ export function ProjectRequestCard({
     <div className="rounded-lg bg-white shadow">
       <div className="p-4 sm:p-6">
         <h3 className="text-lg font-medium leading-6 text-gray-900">
-          Your Original Request
+          Project Request
         </h3>
         <div className="mt-4">
           <dl className="grid grid-cols-2 gap-5 sm:grid-cols-3">

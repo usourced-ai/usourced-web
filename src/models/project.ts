@@ -1,14 +1,9 @@
+import type { Attachment } from "@/models/attachment";
 import type { Order } from "@/models/order";
+import type { ProjectPhase } from "@/models/project-phase";
+import type { ProjectQuote } from "@/models/project-quote";
 import type { ProjectRequest } from "@/models/project-request";
-
-import type { ProjectFile } from "./project-file";
-
-export enum ProjectPhase {
-  Quoting = "Quoting",
-  Sample = "Sample",
-  Production = "Production",
-  Completed = "Completed",
-}
+import type { ProjectStatusInfo } from "@/models/project-status-info";
 
 export type Project = {
   id: string;
@@ -16,8 +11,10 @@ export type Project = {
   createdAt: Date;
   imageUrl?: string;
   phase: ProjectPhase;
+  statusInfo: ProjectStatusInfo;
   pendingTaskCount: number;
   originalRequest?: ProjectRequest;
-  projectFiles: ProjectFile[];
+  attachments: Attachment[];
   orders: Order[];
+  quotes: ProjectQuote[];
 };

@@ -3,7 +3,7 @@ import { FaFolderOpen } from "react-icons/fa";
 
 import { AppButton } from "@/components/common/AppButton";
 
-export function ProjectFileEmptyGallery() {
+export function FileEmptyGallery() {
   return (
     <div className="text-center">
       <FaFolderOpen className="mx-auto h-12 w-12 text-gray-400" />

@@ -14,7 +14,7 @@ function EventIcon({ type }: { type: string }) {
       <CheckCircleIcon className="h-6 w-6 text-teal-700" aria-hidden="true" />
     );
   }
-  if (type === "future") {
+  if (type === "delivered") {
     return (
       <FaTruckLoading
         className="h-6 w-6 rounded-full border border-teal-700 p-1 text-teal-700"

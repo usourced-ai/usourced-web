@@ -4,7 +4,8 @@ import { projects } from "@/api/projects";
 import { ProjectFileGalleryCard } from "@/components/my/projects/show/file-gallery/ProjectFileGalleryCard";
 import { ProjectHeader } from "@/components/my/projects/show/ProjectHeader";
 import { ProjectRequestCard } from "@/components/my/projects/show/ProjectRequestCard";
-import { ProjectHighlightCard } from "@/components/my/projects/show/timeline/ProjectHighlightCard";
+import { ProjectStatusInfoCard } from "@/components/my/projects/show/ProjectStatusInfoCard";
+import { ProjectQuoteGalleryCard } from "@/components/my/projects/show/quoting/ProjectQuoteGalleryCard";
 import { ProjectTimeline } from "@/components/my/projects/show/timeline/ProjectTimeline";
 import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
@@ -45,11 +46,11 @@ export default function ProjectShowPage({ project }: PageProps) {
             {project.originalRequest && (
               <ProjectRequestCard projectRequest={project.originalRequest} />
             )}
-            <ProjectFileGalleryCard projectFiles={project.projectFiles} />
-            <div>{JSON.stringify(project, null, 2)}</div>
+            <ProjectFileGalleryCard files={project.attachments} />
+            <ProjectQuoteGalleryCard />
           </main>
           <aside className="col-span-1">
-            <ProjectHighlightCard project={project} />
+            <ProjectStatusInfoCard info={project.statusInfo} />
             <h2 className="mt-6 font-semibold leading-6 text-gray-900">
               Project Timeline
             </h2>

@@ -1,6 +1,6 @@
 import type { User } from "@/models/user";
 
-export type ProjectFile = {
+export type Attachment = {
   id: string;
   title: string;
   createdAt: Date;

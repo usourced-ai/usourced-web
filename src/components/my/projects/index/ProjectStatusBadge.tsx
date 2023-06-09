@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import pluralize from "pluralize";
 
-import { type Project, ProjectPhase } from "@/models/project";
+import { type Project } from "@/models/project";
+import { ProjectPhase } from "@/models/project-phase";
 
 export function ProjectStatusBadge({ project }: { project: Project }) {
   return (

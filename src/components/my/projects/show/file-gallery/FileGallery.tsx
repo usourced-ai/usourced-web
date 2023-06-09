@@ -1,17 +1,13 @@
 import clsx from "clsx";
 
 import { Avatar } from "@/components/common/Avatar";
-import type { ProjectFile } from "@/models/project-file";
+import type { Attachment } from "@/models/attachment";
 
-export function ProjectFileGallery({
-  projectFiles,
-}: {
-  projectFiles: ProjectFile[];
-}) {
+export function FileGallery({ files }: { files: Attachment[] }) {
   return (
     <section className="mt-4">
       <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        {projectFiles.map((file) => (
+        {files.map((file) => (
           <li key={file.id} className="relative">
             <div
               className={clsx(
