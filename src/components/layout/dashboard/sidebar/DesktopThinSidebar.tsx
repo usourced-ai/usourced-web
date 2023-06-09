@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
+import { AIChatMenuItem } from "@/components/my/projects/chat/AIChatMenuItem";
 import { navigation } from "@/models/navigation";
 import usourcedIcon from "@/public/images/site/usourced-icon.png";
 
@@ -26,16 +27,16 @@ export function DesktopThinSidebar() {
               href={item.href}
               className={clsx(
                 item.current
-                  ? "bg-teal-800 text-white"
-                  : "text-brand hover:bg-gray-50",
-                "flex w-full flex-col items-center rounded-md p-3 text-xs font-medium transition"
+                  ? "bg-teal-700 text-white"
+                  : "text-gray-700 hover:bg-gray-50",
+                "flex w-full flex-col items-center rounded-md p-3 text-xs font-semibold transition"
               )}
               aria-current={item.current ? "page" : undefined}
             >
               {item.icon && (
                 <item.icon
                   className={clsx(
-                    item.current ? "text-white" : "text-brand",
+                    item.current ? "text-white" : "text-gray-400",
                     "h-6 w-6"
                   )}
                   aria-hidden="true"
@@ -44,6 +45,7 @@ export function DesktopThinSidebar() {
               <span className="mt-2">{item.name}</span>
             </Link>
           ))}
+          <AIChatMenuItem thin />
         </nav>
       </div>
     </div>
