@@ -39,7 +39,7 @@ export function ProductCustomizer({ imageUrl }: { imageUrl: string }) {
           variant="outlined"
           onClick={demoAlert}
         >
-          Upload logo
+          Upload design
         </Button>
         <div className="absolute left-[142px] top-[188px] z-10 text-center text-4xl text-white opacity-50">
           <p>YOUR</p>
