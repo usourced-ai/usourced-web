@@ -2,6 +2,8 @@ import "@/styles/global.css";
 
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import type { Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
 import NextNProgress from "nextjs-progressbar";
 import { RecoilRoot } from "recoil";
 
@@ -28,14 +30,19 @@ function GoogleAnalytics() {
   );
 }
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps<{ session: Session }>) {
   return (
     <>
       <RecoilRoot>
-        <NotistackProvider>
-          <NextNProgress color="#333" />
-          <Component {...pageProps} />
-        </NotistackProvider>
+        <SessionProvider session={session}>
+          <NotistackProvider>
+            <NextNProgress color="#333" />
+            <Component {...pageProps} />
+          </NotistackProvider>
+        </SessionProvider>
       </RecoilRoot>
       <GoogleAnalytics />
     </>
