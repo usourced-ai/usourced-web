@@ -21,7 +21,7 @@ function CategoryCard({ category }: { category: ProductCategory }) {
         <Image
           width={160}
           height={160}
-          className="h-40 w-40"
+          className="mx-auto h-32 w-32 lg:h-40 lg:w-40"
           src={category.imageUrl}
           alt={category.name}
         />
@@ -44,14 +44,14 @@ export function CatalogSection() {
       }}
     >
       <div className="mx-auto max-w-screen-lg text-center text-brand sm:px-6 lg:px-8">
-        <h2 className="mb-8 font-brand text-4xl md:text-5xl">
+        <h2 className="mb-8 font-brand text-3xl md:text-5xl">
           Quality, Speed, Value
         </h2>
         <h3 className="mx-auto max-w-xl px-2 text-xl font-light md:px-0">
           Discover unique products across multiple categories, from tech gadgets
           to packaging supplies, and get instant quotes
         </h3>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-4 mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {categories.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}

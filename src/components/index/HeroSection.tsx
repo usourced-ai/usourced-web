@@ -78,7 +78,7 @@ export function HeroSection() {
   return (
     <section className="mt-2">
       <div
-        className="relative mx-auto max-w-screen-xl overflow-hidden rounded-[48px] text-cream sm:px-6 lg:px-8"
+        className="relative mx-auto max-w-screen-xl overflow-hidden rounded-2xl text-cream sm:px-6 md:rounded-[48px] lg:px-8"
         style={{
           backgroundImage: "url('/images/index/bg/hero-bg.svg')",
           backgroundPosition: "bottom",

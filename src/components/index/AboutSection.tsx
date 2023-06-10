@@ -48,12 +48,12 @@ export function AboutSection() {
       style={{ backgroundImage: "url(/images/index/bg/about-bg.svg)" }}
     >
       <div className="mx-auto max-w-screen-lg sm:px-6 lg:px-8">
-        <h2 className="mb-4 text-center font-brand text-4xl text-brand md:text-5xl">
+        <h2 className="mb-4 text-center font-brand text-3xl text-brand md:text-5xl">
           <Star />
           About USourced
           <Star />
         </h2>
-        <div className="mx-4 mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-4 mt-8 grid grid-cols-1 gap-x-8 md:grid-cols-2">
           <div>
             <p className="mb-4">
               <span className="font-semibold">Our mission</span> is to
