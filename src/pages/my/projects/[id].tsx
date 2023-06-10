@@ -2,6 +2,7 @@ import type { GetServerSideProps } from "next";
 
 import { projects } from "@/api/projects";
 import { ProjectFileGalleryCard } from "@/components/my/projects/show/file-gallery/ProjectFileGalleryCard";
+import { OrderGalleryCard } from "@/components/my/projects/show/order-gallery/OrderGalleryCard";
 import { ProjectHeader } from "@/components/my/projects/show/ProjectHeader";
 import { ProjectRequestCard } from "@/components/my/projects/show/ProjectRequestCard";
 import { ProjectStatusInfoCard } from "@/components/my/projects/show/ProjectStatusInfoCard";
@@ -48,6 +49,7 @@ export default function ProjectShowPage({ project }: PageProps) {
             )}
             <ProjectFileGalleryCard files={project.attachments} />
             <ProjectQuoteGalleryCard />
+            <OrderGalleryCard />
           </main>
           <aside className="col-span-1">
             <ProjectStatusInfoCard info={project.statusInfo} />
