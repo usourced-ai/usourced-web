@@ -42,7 +42,7 @@ export default function ProjectShowPage({ project }: PageProps) {
   return (
     <AppLayout meta={<Meta title={[project.name, "My Projects"]} />}>
       <ProjectHeader projectName={project.name} />
-      <div className="mx-auto max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-2 pb-20">
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           <main className="col-span-2 flex flex-col gap-4">
             {project.originalRequest && (
