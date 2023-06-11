@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from "next";
 
-import { projects } from "@/api/projects";
+import { getAttachments, projects } from "@/api/projects";
 import { ProjectFileGalleryCard } from "@/components/my/projects/show/file-gallery/ProjectFileGalleryCard";
 import { OrderGalleryCard } from "@/components/my/projects/show/order-gallery/OrderGalleryCard";
 import { ProjectHeader } from "@/components/my/projects/show/ProjectHeader";
@@ -47,7 +47,7 @@ export default function ProjectShowPage({ project }: PageProps) {
             {project.originalRequest && (
               <ProjectRequestCard projectRequest={project.originalRequest} />
             )}
-            <ProjectFileGalleryCard files={project.attachments} />
+            <ProjectFileGalleryCard files={getAttachments(project)} />
             <ProjectQuoteGalleryCard />
             <OrderGalleryCard />
           </main>

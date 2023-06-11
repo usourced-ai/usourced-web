@@ -1,9 +1,27 @@
+import type { Attachment } from "@/models/attachment";
 import type { Order } from "@/models/order";
 import { OrderStatus, OrderType } from "@/models/order";
 import { type Project } from "@/models/project";
 import { ProjectPhase } from "@/models/project-phase";
 import { ProjectWaitingStatus } from "@/models/project-status-info";
 import { USOURCED_USER } from "@/models/user";
+
+export function getAttachments(project: Project): Attachment[] {
+  if (!project.imageUrl) {
+    return [];
+  }
+  return [
+    {
+      id: "0",
+      title: "Product Mockup",
+      createdAt: project.createdAt,
+      updatedAt: project.createdAt,
+      owner: USOURCED_USER,
+      previewUrl: project.imageUrl,
+      downloadUrl: project.imageUrl,
+    },
+  ];
+}
 
 export const orders: Record<string, Order> = {
   "4-0": {
@@ -142,17 +160,7 @@ export const projects: Record<string, Project> = {
     imageUrl: "/images/demo/projects/Beige Baseball Cap.png",
     orders: [],
     quotes: [],
-    attachments: [
-      {
-        id: "0",
-        title: "Product Mockup",
-        createdAt: new Date("2023-01-03"),
-        updatedAt: new Date("2023-01-03"),
-        owner: USOURCED_USER,
-        previewUrl: "/images/demo/projects/Beige Baseball Cap.png",
-        downloadUrl: "/images/demo/projects/Beige Baseball Cap.png",
-      },
-    ],
+    attachments: [],
     originalRequest: {
       id: "0",
       name: "Beige Baseball Cap",
