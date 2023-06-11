@@ -1,12 +1,27 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
+import clsx from "clsx";
 import { Fragment } from "react";
+import { useRecoilValue } from "recoil";
 
 import { Avatar } from "@/components/common/Avatar";
 import { UserMenu } from "@/components/layout/dashboard/sidebar/UserMenu";
 import { CURRENT_USER } from "@/models/chat";
+import { AppViewState, AppViewStateEnum } from "@/states/AppViewState";
+
+function getColorClasses(appViewState: AppViewStateEnum) {
+  switch (appViewState) {
+    case AppViewStateEnum.ADMIN:
+      return "text-orange-500";
+    case AppViewStateEnum.MEMBER:
+      return "text-gray-500";
+    default:
+      return "text-gray-500";
+  }
+}
 
 export function SidebarUserMenuItem() {
+  const appViewState = useRecoilValue(AppViewState);
   return (
     <Menu as="div" className="relative inline-block w-full text-left">
       <div>
@@ -18,7 +33,14 @@ export function SidebarUserMenuItem() {
                 <span className="truncate text-sm font-medium text-gray-900">
                   Julia Xu
                 </span>
-                <span className="truncate text-sm text-gray-500">Member</span>
+                <span
+                  className={clsx(
+                    "truncate text-sm",
+                    getColorClasses(appViewState)
+                  )}
+                >
+                  {appViewState}
+                </span>
               </span>
             </span>
             <ChevronUpDownIcon
