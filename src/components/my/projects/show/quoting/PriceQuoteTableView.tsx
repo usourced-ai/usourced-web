@@ -1,36 +1,10 @@
 import type { PriceQuoteTable } from "@/models/project-quote";
 
-const table: PriceQuoteTable = {
-  header: ["MOQ 500", "MOQ 1000"],
-  rows: [
-    {
-      name: "Sampling Fee",
-      values: ["$100", "$100"],
-    },
-    {
-      name: "Unit Price",
-      values: ["$17.19", "$15.50"],
-    },
-    {
-      name: "Sampling Days",
-      values: ["7", "7"],
-    },
-    {
-      name: "Production Days",
-      values: ["30", "30"],
-    },
-    {
-      name: "Shipping Days (Air)",
-      values: ["5", "5"],
-    },
-    {
-      name: "Shipping Days (Ocean)",
-      values: ["30", "30"],
-    },
-  ],
-};
-
-export function PriceQuoteTableView() {
+export function PriceQuoteTableView({
+  priceQuoteTable,
+}: {
+  priceQuoteTable: PriceQuoteTable;
+}) {
   return (
     <div className="mt-8 flow-root">
       <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -38,7 +12,7 @@ export function PriceQuoteTableView() {
           <table className="min-w-full divide-y divide-gray-300">
             <thead>
               <tr>
-                {["", ...table.header].map((header) => (
+                {["", ...priceQuoteTable.header].map((header) => (
                   <th
                     key={header}
                     scope="col"
@@ -50,7 +24,7 @@ export function PriceQuoteTableView() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {table.rows.map((row) => (
+              {priceQuoteTable.rows.map((row) => (
                 <tr key={row.name}>
                   <td className="whitespace-nowrap py-4 pl-2 text-sm font-medium text-gray-900">
                     {row.name}

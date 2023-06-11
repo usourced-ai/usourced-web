@@ -13,6 +13,7 @@ export type PriceQuoteTable = {
 export type ProjectQuote = {
   id: string;
   title: string;
+  notes: string;
   createdAt: Date;
   updatedAt: Date;
   priceQuoteTable: PriceQuoteTable;

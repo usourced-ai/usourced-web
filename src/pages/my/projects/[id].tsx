@@ -6,8 +6,9 @@ import { OrderGalleryCard } from "@/components/my/projects/show/order-gallery/Or
 import { ProjectHeader } from "@/components/my/projects/show/ProjectHeader";
 import { ProjectRequestCard } from "@/components/my/projects/show/ProjectRequestCard";
 import { ProjectStatusInfoCard } from "@/components/my/projects/show/ProjectStatusInfoCard";
-import { ProjectQuoteGalleryCard } from "@/components/my/projects/show/quoting/ProjectQuoteGalleryCard";
+import { ProjectQuotePanel } from "@/components/my/projects/show/quoting/ProjectQuotePanel";
 import { ProjectTimeline } from "@/components/my/projects/show/timeline/ProjectTimeline";
+import { projectQuote1, projectQuote2 } from "@/fixtures/project-quote";
 import { AppLayout } from "@/layouts/AppLayout";
 import { Meta } from "@/layouts/Meta";
 import type { Project } from "@/models/project";
@@ -48,7 +49,7 @@ export default function ProjectShowPage({ project }: PageProps) {
               <ProjectRequestCard projectRequest={project.originalRequest} />
             )}
             <ProjectFileGalleryCard files={getAttachments(project)} />
-            <ProjectQuoteGalleryCard />
+            <ProjectQuotePanel quotes={[projectQuote1, projectQuote2]} />
             <OrderGalleryCard />
           </main>
           <aside className="col-span-1">
