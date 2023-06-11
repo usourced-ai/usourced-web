@@ -16,7 +16,7 @@ export function AppLayout({
       {meta}
       {sidebar}
       <MobileNavBar setSidebarOpen={setSidebarOpen} />
-      <main className="h-full lg:ml-24 2xl:ml-72">{children}</main>
+      <main className="h-full lg:ml-24 2xl:ml-64">{children}</main>
     </>
   );
 }

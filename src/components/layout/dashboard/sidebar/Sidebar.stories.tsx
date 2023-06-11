@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Sidebar>;
 
 export const Default: Story = {
   render: () => (
-    <div className="w-72">
+    <div className="w-64">
       <Sidebar />
     </div>
   ),
