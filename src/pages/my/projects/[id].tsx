@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from "next";
 
 import { getAttachments, projects } from "@/api/projects";
+import { ContentVisibilityBanner } from "@/components/my/projects/ContentVisibilityBanner";
 import { ProjectFileGalleryCard } from "@/components/my/projects/show/file-gallery/ProjectFileGalleryCard";
 import { OrderGalleryCard } from "@/components/my/projects/show/order-gallery/OrderGalleryCard";
 import { ProjectHeader } from "@/components/my/projects/show/ProjectHeader";
@@ -42,6 +43,7 @@ export default function ProjectShowPage({ project }: PageProps) {
   return (
     <AppLayout meta={<Meta title={[project.name, "My Projects"]} />}>
       <ProjectHeader projectName={project.name} />
+      <ContentVisibilityBanner />
       <div className="mx-auto max-w-screen-2xl px-2 pb-20">
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           <main className="col-span-2 flex flex-col gap-4">
