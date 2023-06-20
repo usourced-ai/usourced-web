@@ -42,17 +42,4 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#183439",
-          secondary: "#F7F7B6",
-          accent: "#F5CCB6",
-          neutral: "#262626",
-          "neutral-content": "#F8F6F3",
-        },
-      },
-    ],
-  },
 };
