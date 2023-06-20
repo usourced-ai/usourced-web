@@ -170,18 +170,18 @@ export default function ProductShowPage() {
     <StorefrontLayout meta={<Meta title={product.name} />} showDemoBar>
       <div className="pb-16 pt-6">
         <ProductBreadcrumbs breadcrumbs={product.breadcrumbs} />
-        <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 lg:items-start lg:gap-8">
-            <div className="order-3 col-span-2 mt-8 lg:order-1 lg:mt-0">
+        <div className="mx-auto mt-8 px-4 sm:px-6 lg:px-8 xl:max-w-screen-xl">
+          <div className="grid lg:grid-cols-10 lg:items-start lg:gap-8 xl:grid-cols-12">
+            <div className="order-3 col-span-4 mt-8 lg:col-span-12 lg:mt-0 xl:order-1 xl:col-span-2">
               <ProductVariantGallery imageUrls={product.imageUrls} />
             </div>
-            <div className="order-2 col-span-5 mt-8 lg:order-2 lg:mt-0">
+            <div className="order-2 col-span-5 mt-8 lg:order-1 lg:mt-0 xl:order-2">
               <ProductCustomizer imageUrl={selectedVariant!.imageUrl} />
               <div className="mt-8">
                 <ProductSpecSection />
               </div>
             </div>
-            <div className="order-1 col-span-5 lg:order-3">
+            <div className="order-1 col-span-5 lg:order-2 xl:order-3">
               <div className="flex justify-between">
                 <h1 className="text-2xl font-medium text-gray-900">
                   {product.name}
