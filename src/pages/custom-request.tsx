@@ -38,7 +38,7 @@ export default function CustomRequestIndexPage() {
           <b>
             This service will be replaced by our AI-powered custom product
             sourcing agent soon.
-          </b>
+          </b>{" "}
           In the meantime, Please submit your request below and our team will
           get back to you within 24 &ndash; 48 hours.
         </p>
