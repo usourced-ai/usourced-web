@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/usourced-ai/usourced-web/compare/v1.0.0...v1.0.1) (2023-07-04)
+
+
+### Bug Fixes
+
+* **custom-request:** fix typo ([e4bbf00](https://github.com/usourced-ai/usourced-web/commit/e4bbf008886448a8c59f08bd734ec975dd6fb470))
+
 # 1.0.0 (2023-06-20)
 
 
